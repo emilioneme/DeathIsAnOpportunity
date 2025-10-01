@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 185738221}
   - component: {fileID: 185738220}
   - component: {fileID: 185738223}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 439234297}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 449384113}
   - component: {fileID: 449384118}
   - component: {fileID: 449384117}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,16 +453,16 @@ MonoBehaviour:
   groundLinearDrag: 6
   airLinearDrag: 0.5
   jumpImpulse: 7.5
-  maxAirJumps: 1
+  maxAirJumps: 0
   coyoteTime: 0.12
   jumpBuffer: 0.12
   fallGravityMultiplier: 2
   lowJumpGravityMultiplier: 2.5
-  groundCheck: {fileID: 449384116}
-  groundCheckRadius: 0.2
+  groundCheck: {fileID: 843680760}
+  groundCheckRadius: 0.1
   groundLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!54 &449384114
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ GameObject:
   - component: {fileID: 627453867}
   - component: {fileID: 627453869}
   - component: {fileID: 627453868}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MovementCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 650704329}
   - component: {fileID: 650704331}
   - component: {fileID: 650704330}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -871,6 +871,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650704328}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &843680759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843680760}
+  m_Layer: 3
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &843680760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843680759}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1957044614}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529436309
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1529436310}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1530515328}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,7 +1070,7 @@ GameObject:
   - component: {fileID: 1666802452}
   - component: {fileID: 1666802454}
   - component: {fileID: 1666802453}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TriggerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1101,7 +1132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1957044614}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1123,6 +1154,7 @@ Transform:
   m_Children:
   - {fileID: 627453867}
   - {fileID: 1666802452}
+  - {fileID: 843680760}
   m_Father: {fileID: 449384116}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
