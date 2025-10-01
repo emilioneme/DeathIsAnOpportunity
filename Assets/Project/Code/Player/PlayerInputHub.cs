@@ -1,0 +1,88 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerInputHub : MonoBehaviour
+{
+    // === Continuous values ===
+    public Vector2 Move { get; private set; }
+    public Vector2 Look { get; private set; }
+
+    // === Jump states ===
+    public bool JumpHeld { get; private set; }
+    public bool JumpPressed { get; private set; }
+
+    // === Attack states ===
+    public bool AttackHeld { get; private set; }
+    public bool AttackPressed { get; private set; }
+
+    // === Interact ===
+    public bool InteractPressed { get; private set; }
+
+    // === Events (optional, nice for one-shots) ===
+    public event System.Action OnJumpPressed;
+    public event System.Action OnAttackPressed;
+    public event System.Action OnInteractPressed;
+
+    // --- Input System callbacks ---
+    public void OnMove(InputAction.CallbackContext ctx) 
+        => Move = ctx.ReadValue<Vector2>();
+
+    public void OnLook(InputAction.CallbackContext ctx) 
+        => Look = ctx.ReadValue<Vector2>();
+
+    public void OnJump(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            JumpPressed = true;
+            JumpHeld = true;
+            OnJumpPressed?.Invoke();
+        }
+        else if (ctx.canceled)
+        {
+            JumpHeld = false;
+        }
+    }
+
+    public void OnAttack(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            AttackPressed = true;
+            AttackHeld = true;
+            OnAttackPressed?.Invoke();
+        }
+        else if (ctx.canceled)
+        {
+            AttackHeld = false;
+        }
+    }
+
+    public void OnInteract(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            InteractPressed = true;
+            OnInteractPressed?.Invoke();
+        }
+    }
+
+    void LateUpdate()
+    {
+        // Reset "pressed" flags at end of frame so they're one-frame only
+        JumpPressed = false;
+        AttackPressed = false;
+        InteractPressed = false;
+    }
+
+    void OnDisable()
+    {
+        // Reset all states so they don’t stick if input disables
+        Move = Look = Vector2.zero;
+        JumpHeld = JumpPressed = false;
+        AttackHeld = AttackPressed = false;
+        InteractPressed = false;
+    }
+}
+
+
