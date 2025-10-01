@@ -97,8 +97,8 @@ public class PlayerMovementRB : MonoBehaviour
         // Project camera forward/right onto plane (y=0)
         Vector3 forward = orientation.forward;  forward.y = 0f; forward.Normalize();
         Vector3 right = orientation.right;  right.y = 0f; right.Normalize();
-        Vector3 dir = forward * move.y + right * move.x;
-        return dir.normalized; // direction only; speed controlled in MoveTowards
+        Vector3 direction = forward * move.y + right * move.x;
+        return direction.normalized; // direction only; speed controlled in MoveTowards
     }
 
     void MoveTowards(Vector3 desiredDir)
