@@ -897,6 +897,7 @@ GameObject:
   - component: {fileID: 2157047252279213208}
   - component: {fileID: 7933732583096578165}
   - component: {fileID: 848472430176073179}
+  - component: {fileID: 8474908182244670157}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1162,6 +1163,35 @@ Transform:
   - {fileID: 5013192865990800188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8474908182244670157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927013295340078667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fa5be912642c5419a967ed8f3a46d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  startAtMax: 1
+  invulnerable: 0
+  clampOverheal: 1
+  currentHealth: 100
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!33 &9195812264480423608
 MeshFilter:
   m_ObjectHideFlags: 0
