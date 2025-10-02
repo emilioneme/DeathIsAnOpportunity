@@ -847,7 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a780996f89a115d459eb3107d9922a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputHub: {fileID: 0}
+  inputHub: {fileID: 5190843562338215148}
   orientation: {fileID: 1100038243913088129}
   cameraPivot: {fileID: 4545965254022929023}
   mouseSensitivity: 1.5
@@ -883,7 +883,7 @@ GameObject:
   - component: {fileID: 5190843562338215148}
   - component: {fileID: 3883707795593368373}
   m_Layer: 3
-  m_Name: PLayerMovementRB
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

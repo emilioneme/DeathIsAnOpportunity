@@ -42,7 +42,7 @@ public class PlayerMovementRB : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeRotation; // prevent tipping
         if (!inputHub) inputHub = GetComponent<PlayerInputHub>();
         if (!orientation) orientation = Camera.main ? Camera.main.transform : transform;
-
+        
     }
 
     void Update()
@@ -54,11 +54,14 @@ public class PlayerMovementRB : MonoBehaviour
             lastGroundedTime = Time.time;
             airJumpsUsed = 0;
         }
-
+        
         // Buffer jump input
         if (inputHub.JumpPressed)
             lastJumpPressedTime = Time.time;
+    }
 
+    void FixedUpdate()
+    {
         // Try to consume buffered jump (this allows the player to press jump slightly before landing)
         if (Time.time - lastJumpPressedTime <= jumpBuffer)
         {
@@ -79,10 +82,6 @@ public class PlayerMovementRB : MonoBehaviour
 
         // Extra gravity for snappy feel, removed to make jumps feel better
         ApplyBetterJumpGravity();
-    }
-
-    void FixedUpdate()
-    {
         Vector3 desired = CameraRelativeMove(inputHub.Move);
         if(desired.sqrMagnitude > 0.01f)
             MoveTowards(desired);
