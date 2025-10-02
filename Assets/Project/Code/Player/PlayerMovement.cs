@@ -60,10 +60,10 @@ public class PlayerMovementRB : MonoBehaviour
         if (inputHub.JumpPressed)
             lastJumpPressedTime = Time.time;
 
-        // Try to consume buffered jump
+        // Try to consume buffered jump (this allows the player to press jump slightly before landing)
         if (Time.time - lastJumpPressedTime <= jumpBuffer)
         {
-            // if within coyote window -> grounded jump
+            // if within coyote window -> grounded jump (this allows jumping shortly after leaving a platform)
             if (Time.time - lastGroundedTime <= coyoteTime)
             {
                 DoJump();
@@ -78,16 +78,17 @@ public class PlayerMovementRB : MonoBehaviour
             }
         }
 
-        // Extra gravity for snappy feel
+        // Extra gravity for snappy feel, removed to make jumps feel better
         ApplyBetterJumpGravity();
     }
 
     void FixedUpdate()
     {
         Vector3 desired = CameraRelativeMove(inputHub.Move);
-        MoveTowards(desired);
+        if(desired.sqrMagnitude > 0.01f)
+            MoveTowards(desired);
         CapHorizontalSpeed(maxHorizontalSpeed);
-        //rb.drag = grounded ? groundLinearDrag : airLinearDrag;
+        rb.linearDamping = grounded ? groundLinearDrag : airLinearDrag;
     }
 
     // --- Helpers ---
@@ -128,9 +129,9 @@ public class PlayerMovementRB : MonoBehaviour
     void DoJump()
     {
         // Reset downward velocity so short hops feel responsive
-        Vector3 v = rb.linearVelocity;
-        if (v.y < 0f) v.y = 0f;
-        rb.linearVelocity = new Vector3(v.x, v.y, v.z);
+        Vector3 velocity = rb.linearVelocity;
+        if (velocity.y < 0f) velocity.y = 0f;
+        rb.linearVelocity = new Vector3(velocity.x, velocity.y, velocity.z);
 
         rb.AddForce(Vector3.up * jumpImpulse, ForceMode.Impulse);
     }
