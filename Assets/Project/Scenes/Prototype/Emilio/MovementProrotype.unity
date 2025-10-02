@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 5272133294013700979}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   groundLinearDrag: 1
   airLinearDrag: 0.5
   jumpImpulse: 7.5
-  maxAirJumps: 0
+  maxAirJumps: 1
   coyoteTime: 0.1
   jumpBuffer: 0.1
   fallGravityMultiplier: 1.5

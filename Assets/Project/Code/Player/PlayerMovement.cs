@@ -43,7 +43,6 @@ public class PlayerMovementRB : MonoBehaviour
         if (!inputHub) inputHub = GetComponent<PlayerInputHub>();
         if (!orientation) orientation = Camera.main ? Camera.main.transform : transform;
 
-
     }
 
     void Update()
