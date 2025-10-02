@@ -11,6 +11,8 @@ public class ChaseBehaviour : MonoBehaviour
     private int lastSeenIndex = 0;
     private int currentIndex = -1;
 
+    public Vector3 proximityOffsetDir = Vector3.zero;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,7 +27,7 @@ public class ChaseBehaviour : MonoBehaviour
         if (gameObject.HasLineOfSight( target, 6000)) Chase();
         else if (currentIndex < Mathf.Min(lastSeenIndex+10,breadcrumbs.lastIndex()) && currentIndex > 0 && lastSeenIndex > 0)
         {
-            Debug.Log($"currentIdx: {currentIndex}, lastSeenIdx: {lastSeenIndex}");
+            // Debug.Log($"currentIdx: {currentIndex}, lastSeenIdx: {lastSeenIndex}");
             if (Vector3.Magnitude((Vector3)(currentBreadcrumb - transform.position)) < 0.1)
                 currentBreadcrumb = breadcrumbs.GetBreadcrumbAt(currentIndex++);
 
@@ -54,7 +56,15 @@ public class ChaseBehaviour : MonoBehaviour
         currentBreadcrumb = breadcrumbs.GetBreadcrumbAt(currentIndex);
         
         transform.LookAt(Vector3.Lerp(transform.forward, target.transform.position, 0.5f));
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime*(2f
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position+proximityOffsetDir, Time.deltaTime*(2f
             + (target.transform.position - transform.position).magnitude/5) ); 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<ChaseBehaviour>())
+        {
+            Debug.Log("ChaseR");
+        }
     }
 }

@@ -22,6 +22,7 @@ public class BreadcrumbManager : MonoBehaviour
     {
         while (true)
         {
+            // if(breadcrumbs.Count > 0 && Vector3.Distance(breadcrumbs[^1], target.transform.position) > 10) 
             breadcrumbs.Add(target.transform.position);
             if (breadcrumbs.Count > maxBreadcrumbs)
             {
@@ -56,6 +57,6 @@ public class BreadcrumbManager : MonoBehaviour
 
     public Vector3? GetBreadcrumbAt(int index)
     {
-       return  breadcrumbs[index];
+       return breadcrumbs[index];
     }
 }
