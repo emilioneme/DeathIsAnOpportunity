@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -63,7 +64,18 @@ public class PlayerInputHub : MonoBehaviour
         if (ctx.performed)
         {
             InteractPressed = true;
-            OnInteractPressed?.Invoke();
+            // OnInteractPressed?.Invoke();
+            
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+            
+            if (Physics.Raycast(ray, out RaycastHit hit, 3f))
+            {
+                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
         }
     }
 
