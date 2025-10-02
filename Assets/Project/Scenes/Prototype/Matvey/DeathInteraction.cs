@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class DeathInteraction : MonoBehaviour, IInteractable
 {
+    [SerializeField] private CutsceneManager cutsceneManager;
     public void Interact()
     {
-        Debug.Log("Speak");
+        cutsceneManager.Play();
     }
 }

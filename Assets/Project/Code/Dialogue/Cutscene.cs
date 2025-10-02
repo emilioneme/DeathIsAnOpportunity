@@ -1,14 +1,16 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-public class Cutscene : MonoBehaviour
-{
-    [SerializeField] public List<DialogueLines> dialogue = new List<DialogueLines>();
-    void Start()
-    {
-    }
 
-    void Update()
+[Serializable]
+public class Cutscene
+{
+    [SerializeField] private List<DialogueLines> dialogue = new List<DialogueLines>();
+    int dialogueIndex = 0;
+    public bool isFinished = false;
+
+    public string getLine()
     {
-        
+        return (dialogueIndex < dialogue.Count) ? dialogue[dialogueIndex++].text+'\n' : null;
     }
 }
