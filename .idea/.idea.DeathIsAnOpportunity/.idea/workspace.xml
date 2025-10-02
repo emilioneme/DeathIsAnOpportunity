@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="772a308a-4188-4d98-b18e-efd52d6c9cd8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DeathIsAnOpportunity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DeathIsAnOpportunity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/DeathRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/DeathRoom.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Terrain 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/EnemyTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/EnemyTest.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1759351891762</updated>
       <workItem from="1759351897541" duration="15000" />
-      <workItem from="1759389684948" duration="19533000" />
+      <workItem from="1759389684948" duration="21072000" />
     </task>
     <servers />
   </component>
