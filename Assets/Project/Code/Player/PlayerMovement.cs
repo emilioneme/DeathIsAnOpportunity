@@ -35,6 +35,24 @@ public class PlayerMovementRB : MonoBehaviour
     private float lastGroundedTime;
     private float lastJumpPressedTime;
 
+    public void ApplyUpgradeData(PlayerUpgradeData data)
+    {
+        if (data == null) return;
+
+        moveSpeed = data.MoveSpeed;
+        maxHorizontalSpeed = data.MaxHorizontalSpeed;
+        groundAcceleration = data.GroundAcceleration;
+        airAcceleration = data.AirAcceleration;
+        groundLinearDrag = data.GroundLinearDrag;
+        airLinearDrag = data.AirLinearDrag;
+        jumpImpulse = data.JumpImpulse;
+        maxAirJumps = data.MaxAirJumps;
+        coyoteTime = data.CoyoteTime;
+        jumpBuffer = data.JumpBuffer;
+        fallGravityMultiplier = data.FallGravityMultiplier;
+        lowJumpGravityMultiplier = data.LowJumpGravityMultiplier;
+    }
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -172,4 +190,3 @@ public class PlayerMovementRB : MonoBehaviour
     }
 #endif
 }
-
