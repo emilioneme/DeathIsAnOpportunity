@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
     private float lifeTime;
     private ProjectilePathType pathType;
     private GameObject owner;
+    private PlayerProjectileShooter poolOwner;
 
     public float Damage => damage;
 
@@ -33,6 +34,13 @@ public class Projectile : MonoBehaviour
     void OnDisable()
     {
         UnregisterProjectileCollider();
+        CancelInvoke(nameof(HandleLifeComplete));
+
+        if (rb)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
     }
 
     public void Initialize(float damageValue, float speedValue, float lifeDuration, ProjectilePathType path, float size, GameObject instigator)
@@ -51,8 +59,15 @@ public class Projectile : MonoBehaviour
         float clampedSize = Mathf.Max(0.01f, size);
         transform.localScale = Vector3.one * clampedSize;
 
+        CancelInvoke(nameof(HandleLifeComplete));
+
         if (lifeTime > 0f)
-            Destroy(gameObject, lifeTime);
+            Invoke(nameof(HandleLifeComplete), lifeTime);
+    }
+
+    public void SetPoolOwner(PlayerProjectileShooter shooter)
+    {
+        poolOwner = shooter;
     }
 
     void OnTriggerEnter(Collider other)
@@ -63,7 +78,24 @@ public class Projectile : MonoBehaviour
         if (owner && other.transform.root == owner.transform)
             return;
 
-        Destroy(gameObject);
+        Deactivate();
+    }
+
+    private void HandleLifeComplete()
+    {
+        Deactivate();
+    }
+
+    private void Deactivate()
+    {
+        if (poolOwner)
+        {
+            poolOwner.ReclaimProjectile(this);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void RegisterProjectileCollider()

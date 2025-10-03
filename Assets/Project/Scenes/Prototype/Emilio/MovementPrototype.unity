@@ -989,7 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf4b2aeac3c29d49a4fe8f2ffdd3bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeData: {fileID: 11400000, guid: 0d1398e837ee76b489c839137ee118b7, type: 2}
+  upgradeData: {fileID: 11400000, guid: 88b311cf9473f7c4f9b0d6b115df8846, type: 2}
   movement: {fileID: 178074657637008452}
   shooter: {fileID: 8474908182244670158}
 --- !u!136 &6393373768143040247
@@ -1243,14 +1243,14 @@ MonoBehaviour:
   inputHub: {fileID: 7933732583096578165}
   muzzle: {fileID: 276052842}
   projectilePrefab: {fileID: 6912966402700947078, guid: f29aa2e121deffb4abb1376408bffcb7, type: 3}
-  fireRate: 10
+  fireRate: 1
   projectileSize: 0.1
   projectileDamage: 10
-  projectileSpeed: 20
-  projectilePath: 1
+  projectileSpeed: 1
+  projectilePath: 0
   projectileLife: 3
   projectilesPerShot: 1
-  projectileSpreadRadius: 0.5
+  projectileSpreadRadius: 1
 --- !u!33 &9195812264480423608
 MeshFilter:
   m_ObjectHideFlags: 0

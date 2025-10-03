@@ -1,11 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInputHub))]
 public class PlayerProjectileShooter : MonoBehaviour
 {
+    private const int MaxProjectiles = 300;
+
     [Header("References")]
     [SerializeField] private PlayerInputHub inputHub;
-    [SerializeField] private Transform muzzle;
+    [SerializeField] private Transform projectileExit;
     [SerializeField] private Projectile projectilePrefab;
 
     [Header("Combat Values")]
@@ -18,6 +21,9 @@ public class PlayerProjectileShooter : MonoBehaviour
     [SerializeField] private int projectilesPerShot = 1;
     [SerializeField] private float projectileSpreadRadius = 0.5f;
 
+    private readonly Queue<Projectile> projectilePool = new();
+    private readonly List<Projectile> activeProjectiles = new();
+    private int createdProjectiles;
     private float fireCooldown;
 
     void Awake()
@@ -25,8 +31,8 @@ public class PlayerProjectileShooter : MonoBehaviour
         if (!inputHub)
             inputHub = GetComponent<PlayerInputHub>();
 
-        if (!muzzle)
-            muzzle = transform;
+        if (!projectileExit)
+            projectileExit = transform;
     }
 
     void Update()
@@ -35,7 +41,7 @@ public class PlayerProjectileShooter : MonoBehaviour
             fireCooldown -= Time.deltaTime;
 
         if (inputHub && inputHub.AttackHeld)
-            TryFire(muzzle.forward);
+            TryFire(projectileExit.forward);
     }
 
     public void ApplyUpgradeData(PlayerUpgradeData data)
@@ -55,29 +61,97 @@ public class PlayerProjectileShooter : MonoBehaviour
 
     public void TryFire(Vector3 fireDirection)
     {
-        if (!projectilePrefab || !muzzle)
+        if (!projectilePrefab || !projectileExit)
             return;
 
         if (fireCooldown > 0f)
             return;
 
-        FireProjectiles(fireDirection.normalized);
-
-        fireCooldown = fireRate > 0f ? 1f / fireRate : 0f;
+        if (FireProjectiles(fireDirection.normalized))
+            fireCooldown = fireRate > 0f ? 1f / fireRate : 0f;
     }
 
-    private void FireProjectiles(Vector3 fireDirection)
+    public void ReclaimProjectile(Projectile projectile)
     {
-        Transform spawnPoint = muzzle ? muzzle : transform;
+        if (!projectile)
+            return;
+
+        if (activeProjectiles.Remove(projectile))
+        {
+            projectile.gameObject.SetActive(false);
+            projectilePool.Enqueue(projectile);
+        }
+    }
+
+    private bool FireProjectiles(Vector3 fireDirection)
+    {
+        Transform spawnPoint = projectileExit ? projectileExit : transform;
         Vector3[] offsets = BuildSpreadOffsets(Mathf.Max(1, projectilesPerShot), projectileSpreadRadius);
         Quaternion projectileRotation = Quaternion.LookRotation(fireDirection, spawnPoint.up);
+        bool firedAny = false;
 
         for (int i = 0; i < offsets.Length; i++)
         {
             Vector3 offset = offsets[i];
             Vector3 worldOffset = spawnPoint.right * offset.x + spawnPoint.up * offset.y;
-            Projectile projectileInstance = Instantiate(projectilePrefab, spawnPoint.position + worldOffset, projectileRotation);
+            Vector3 spawnPosition = spawnPoint.position + worldOffset;
+            Projectile projectileInstance = GetProjectile(spawnPosition, projectileRotation);
+
+            if (!projectileInstance)
+                break;
+
+            firedAny = true;
             projectileInstance.Initialize(projectileDamage, projectileSpeed, projectileLife, projectilePath, projectileSize, gameObject);
+        }
+
+        return firedAny;
+    }
+
+    private Projectile GetProjectile(Vector3 position, Quaternion rotation)
+    {
+        while (projectilePool.Count > 0 && !projectilePool.Peek())
+            projectilePool.Dequeue();
+
+        if (projectilePool.Count == 0 && createdProjectiles >= MaxProjectiles)
+            ForceRecycleOldestProjectile();
+
+        Projectile projectileInstance = null;
+
+        if (projectilePool.Count > 0)
+        {
+            projectileInstance = projectilePool.Dequeue();
+            projectileInstance.transform.SetPositionAndRotation(position, rotation);
+            projectileInstance.gameObject.SetActive(true);
+        }
+        else if (createdProjectiles < MaxProjectiles)
+        {
+            projectileInstance = Instantiate(projectilePrefab, position, rotation);
+            projectileInstance.SetPoolOwner(this);
+            createdProjectiles++;
+        }
+
+        if (projectileInstance)
+        {
+            projectileInstance.SetPoolOwner(this);
+            activeProjectiles.Add(projectileInstance);
+        }
+
+        return projectileInstance;
+    }
+
+    private void ForceRecycleOldestProjectile()
+    {
+        for (int i = 0; i < activeProjectiles.Count; i++)
+        {
+            Projectile projectile = activeProjectiles[i];
+            activeProjectiles.RemoveAt(i);
+
+            if (!projectile)
+                continue;
+
+            projectile.gameObject.SetActive(false);
+            projectilePool.Enqueue(projectile);
+            break;
         }
     }
 
