@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa46159313ec3e749847c21c1a3c90f1, type: 3}
-  m_Name: StartPlayerUpgradeData
+  m_Name: DebugUpgrades
   m_EditorClassIdentifier: 
   moveSpeed: 7.5
   maxHorizontalSpeed: 11.25
@@ -27,9 +27,9 @@ MonoBehaviour:
   fireRate: 0.5
   projectileSize: 1
   projectileDamage: 1
-  projectileSpeed: 10
+  projectileSpeed: 7
   projectilePath: 0
-  projectileLife: 2
+  projectileLife: 1
   projectilesPerShot: 1
   projectileSpreadRadius: 0.1
   projectileAngleVariance: 10

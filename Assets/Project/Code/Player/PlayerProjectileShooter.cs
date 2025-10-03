@@ -1,25 +1,25 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInputHub))]
 public class PlayerProjectileShooter : MonoBehaviour
 {
-    private const int MaxProjectiles = 300;
+    private const int MaxProjectiles = 500;
+    private const float NormalPathSpeedMultiplier = 3f;
 
     [Header("References")]
     [SerializeField] private PlayerInputHub inputHub;
-    [SerializeField] private Transform projectileExit;
+    [SerializeField] private Transform muzzle;
     [SerializeField] private Projectile projectilePrefab;
 
-    [Header("Combat Values")]
-    [SerializeField] private float fireRate = 2f;
-    [SerializeField] private float projectileSize = 1f;
-    [SerializeField] private float projectileDamage = 10f;
-    [SerializeField] private float projectileSpeed = 20f;
-    [SerializeField] private ProjectilePathType projectilePath = ProjectilePathType.Normal;
-    [SerializeField] private float projectileLife = 3f;
-    [SerializeField] private int projectilesPerShot = 1;
-    [SerializeField] private float projectileSpreadRadius = 0.5f;
+    private float fireRate = 2f;
+    private float projectileSize = 1f;
+    private float projectileDamage = 10f;
+    private float projectileSpeed = 20f;
+    private float projectileLife = 3f;
+    private int projectilesPerShot = 1;
+    private float projectileSpreadRadius = 0.5f;
+    private float projectileAngleVariance = 5f;
 
     private readonly Queue<Projectile> projectilePool = new();
     private readonly List<Projectile> activeProjectiles = new();
@@ -31,8 +31,8 @@ public class PlayerProjectileShooter : MonoBehaviour
         if (!inputHub)
             inputHub = GetComponent<PlayerInputHub>();
 
-        if (!projectileExit)
-            projectileExit = transform;
+        if (!muzzle)
+            muzzle = transform;
     }
 
     void Update()
@@ -41,7 +41,7 @@ public class PlayerProjectileShooter : MonoBehaviour
             fireCooldown -= Time.deltaTime;
 
         if (inputHub && inputHub.AttackHeld)
-            TryFire(projectileExit.forward);
+            TryFire(muzzle.forward);
     }
 
     public void ApplyUpgradeData(PlayerUpgradeData data)
@@ -53,15 +53,15 @@ public class PlayerProjectileShooter : MonoBehaviour
         projectileSize = data.ProjectileSize;
         projectileDamage = data.ProjectileDamage;
         projectileSpeed = data.ProjectileSpeed;
-        projectilePath = data.ProjectilePath;
         projectileLife = data.ProjectileLife;
         projectilesPerShot = Mathf.Max(1, data.ProjectilesPerShot);
         projectileSpreadRadius = data.ProjectileSpreadRadius;
+        projectileAngleVariance = data.ProjectileAngleVariance;
     }
 
     public void TryFire(Vector3 fireDirection)
     {
-        if (!projectilePrefab || !projectileExit)
+        if (!projectilePrefab || !muzzle)
             return;
 
         if (fireCooldown > 0f)
@@ -85,23 +85,26 @@ public class PlayerProjectileShooter : MonoBehaviour
 
     private bool FireProjectiles(Vector3 fireDirection)
     {
-        Transform spawnPoint = projectileExit ? projectileExit : transform;
-        Vector3[] offsets = BuildSpreadOffsets(Mathf.Max(1, projectilesPerShot), projectileSpreadRadius);
-        Quaternion projectileRotation = Quaternion.LookRotation(fireDirection, spawnPoint.up);
+        Transform spawnPoint = muzzle ? muzzle : transform;
+        int count = Mathf.Max(1, projectilesPerShot);
         bool firedAny = false;
 
-        for (int i = 0; i < offsets.Length; i++)
+        Quaternion baseRotation = Quaternion.LookRotation(fireDirection, spawnPoint.up);
+
+        for (int i = 0; i < count; i++)
         {
-            Vector3 offset = offsets[i];
-            Vector3 worldOffset = spawnPoint.right * offset.x + spawnPoint.up * offset.y;
+            Vector2 spreadOffset = SampleSpreadOffset(count, projectileSpreadRadius);
+            Vector3 worldOffset = spawnPoint.right * spreadOffset.x + spawnPoint.up * spreadOffset.y;
             Vector3 spawnPosition = spawnPoint.position + worldOffset;
-            Projectile projectileInstance = GetProjectile(spawnPosition, projectileRotation);
+
+            Quaternion randomizedRotation = GetRandomizedRotation(baseRotation, projectileAngleVariance);
+            Projectile projectileInstance = GetProjectile(spawnPosition, randomizedRotation);
 
             if (!projectileInstance)
                 break;
 
             firedAny = true;
-            projectileInstance.Initialize(projectileDamage, projectileSpeed, projectileLife, projectilePath, projectileSize, gameObject);
+            projectileInstance.Initialize(projectileDamage, projectileSpeed, projectileLife, projectileSize, gameObject);
         }
 
         return firedAny;
@@ -155,22 +158,32 @@ public class PlayerProjectileShooter : MonoBehaviour
         }
     }
 
-    private Vector3[] BuildSpreadOffsets(int count, float radius)
+    private Vector2 SampleSpreadOffset(int totalCount, float radius)
     {
-        if (count <= 1 || radius <= 0f)
-            return new[] { Vector3.zero };
+        if (radius <= 0f)
+            return Vector2.zero;
 
-        Vector3[] offsets = new Vector3[count];
-        float angleStep = Mathf.PI * 2f / count;
+        if (totalCount <= 1)
+            return Random.insideUnitCircle * (radius * 0.25f);
 
-        for (int i = 0; i < count; i++)
-        {
-            float angle = angleStep * i;
-            float x = Mathf.Cos(angle) * radius;
-            float y = Mathf.Sin(angle) * radius;
-            offsets[i] = new Vector3(x, y, 0f);
-        }
+        return Random.insideUnitCircle * radius;
+    }
 
-        return offsets;
+    private Quaternion GetRandomizedRotation(Quaternion baseRotation, float angleVariance)
+    {
+        if (angleVariance <= 0f)
+            return baseRotation;
+
+        Vector3 localUp = baseRotation * Vector3.up;
+        Vector3 localRight = baseRotation * Vector3.right;
+
+        float yaw = Random.Range(-angleVariance, angleVariance);
+        float pitch = Random.Range(-angleVariance, angleVariance);
+
+        Quaternion yawRotation = Quaternion.AngleAxis(yaw, localUp);
+        Quaternion pitchRotation = Quaternion.AngleAxis(pitch, localRight);
+        Quaternion randomizedRotation = yawRotation * pitchRotation * baseRotation;
+
+        return randomizedRotation;
     }
 }

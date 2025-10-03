@@ -13,22 +13,23 @@ MonoBehaviour:
   m_Name: ReallyBuffedPlayer
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  maxHorizontalSpeed: 50
-  groundAcceleration: 40
-  airAcceleration: 30
-  groundLinearDrag: 1
-  airLinearDrag: 0.5
-  jumpImpulse: 10
-  maxAirJumps: 3
+  maxHorizontalSpeed: 45
+  groundAcceleration: 120
+  airAcceleration: 80
+  groundLinearDrag: 12
+  airLinearDrag: 4
+  jumpImpulse: 20
+  maxAirJumps: 5
   coyoteTime: 0.1
   jumpBuffer: 0.1
   fallGravityMultiplier: 1.5
   lowJumpGravityMultiplier: 1.7
-  fireRate: 1
-  projectileSize: 0.4
-  projectileDamage: 30
-  projectileSpeed: 10
-  projectilePath: 1
+  fireRate: 20
+  projectileSize: 0.28867513
+  projectileDamage: 100
+  projectileSpeed: 80
+  projectilePath: 0
   projectileLife: 10
-  projectilesPerShot: 8
-  projectileSpreadRadius: 0.3
+  projectilesPerShot: 12
+  projectileSpreadRadius: 0.34641016
+  projectileAngleVariance: 5

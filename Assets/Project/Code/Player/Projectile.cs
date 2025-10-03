@@ -11,7 +11,6 @@ public class Projectile : MonoBehaviour
 
     private float damage;
     private float lifeTime;
-    private ProjectilePathType pathType;
     private GameObject owner;
     private PlayerProjectileShooter poolOwner;
 
@@ -43,16 +42,14 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Initialize(float damageValue, float speedValue, float lifeDuration, ProjectilePathType path, float size, GameObject instigator)
+    public void Initialize(float damageValue, float speedValue, float lifeDuration, float size, GameObject instigator)
     {
         damage = damageValue;
         lifeTime = lifeDuration;
-        pathType = path;
         owner = instigator;
 
         if (rb)
         {
-            rb.useGravity = pathType == ProjectilePathType.Normal;
             rb.linearVelocity = transform.forward * speedValue;
         }
 
