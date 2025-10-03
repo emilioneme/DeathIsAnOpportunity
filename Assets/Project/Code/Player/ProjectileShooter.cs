@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerInputHub))]
-public class PlayerProjectileShooter : MonoBehaviour
+public class ProjectileShooter : MonoBehaviour
 {
     private const int MaxProjectiles = 500;
 
     [Header("References")]
-    [SerializeField] private PlayerInputHub inputHub;
     [SerializeField] private Transform muzzle;
     [SerializeField] private Projectile projectilePrefab;
 
@@ -24,12 +22,11 @@ public class PlayerProjectileShooter : MonoBehaviour
     private readonly List<Projectile> activeProjectiles = new();
     private int createdProjectiles;
     private float fireCooldown;
+    public bool isFiring = false;
+    
 
     void Awake()
     {
-        if (!inputHub)
-            inputHub = GetComponent<PlayerInputHub>();
-
         if (!muzzle)
             muzzle = transform;
     }
@@ -38,8 +35,8 @@ public class PlayerProjectileShooter : MonoBehaviour
     {
         if (fireCooldown > 0f)
             fireCooldown -= Time.deltaTime;
-
-        if (inputHub && inputHub.AttackHeld)
+        // inputHub && inputHub.AttackHeld
+        if (isFiring)
             TryFire(muzzle.forward);
     }
 

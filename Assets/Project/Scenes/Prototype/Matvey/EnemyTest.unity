@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 878512431776797946, guid: 503c4197fe291e54fbac8dcc7a51d409, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 8355538974299737929}
     - target: {fileID: 2430379977172446145, guid: 503c4197fe291e54fbac8dcc7a51d409, type: 3}
       propertyPath: target
       value: 
@@ -356,21 +360,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1963435277722654648, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5087757485900766150, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 460169544677986560, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 8355538974299737929}
     - target: {fileID: 6041284357882017041, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
       propertyPath: m_Name
       value: Chaser (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6041284357882017041, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6967894193680291235, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -787,6 +783,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 878512431776797946, guid: 503c4197fe291e54fbac8dcc7a51d409, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 8355538974299737929}
     - target: {fileID: 2430379977172446145, guid: 503c4197fe291e54fbac8dcc7a51d409, type: 3}
       propertyPath: target
       value: 
@@ -1142,6 +1142,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 460169544677986560, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 8355538974299737929}
     - target: {fileID: 6041284357882017041, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
       propertyPath: m_Name
       value: Chaser (1)
@@ -1249,6 +1253,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 878512431776797946, guid: 503c4197fe291e54fbac8dcc7a51d409, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 8355538974299737929}
     - target: {fileID: 2430379977172446145, guid: 503c4197fe291e54fbac8dcc7a51d409, type: 3}
       propertyPath: target
       value: 
@@ -1360,6 +1368,8 @@ GameObject:
   - component: {fileID: 5364846905374937196}
   - component: {fileID: 5864222630546498354}
   - component: {fileID: 8059602748731181571}
+  - component: {fileID: 8059602748731181573}
+  - component: {fileID: 8059602748731181572}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1715,14 +1725,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1963435277722654648, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5087757485900766150, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 460169544677986560, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 8355538974299737929}
     - target: {fileID: 6041284357882017041, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
       propertyPath: m_Name
       value: Chaser
@@ -2012,6 +2018,33 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &8059602748731181572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541551277112972849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d56c2c54d9a9b46974538827ed215a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  isFiring: 0
+--- !u!114 &8059602748731181573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541551277112972849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d95a0508859134c9eee3f1d29a997e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &8347125420893459391
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2051,6 +2084,8 @@ GameObject:
   - component: {fileID: 4349195558079411610}
   - component: {fileID: 5741644097861187959}
   - component: {fileID: 3058591153802280153}
+  - component: {fileID: 8547375442678359146}
+  - component: {fileID: 8547375442678359145}
   m_Layer: 3
   m_Name: PlayerPrefab1.0
   m_TagString: Player
@@ -2070,6 +2105,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf4b2aeac3c29d49a4fe8f2ffdd3bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeData: {fileID: 0}
+  movement: {fileID: 2579586942486580550}
+  shooter: {fileID: 8547375442678359146}
+--- !u!114 &8547375442678359145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8355538974299737929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1933a134f3a18474db23e08e810a2cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInputHub: {fileID: 5741644097861187959}
+  shooter: {fileID: 8547375442678359146}
+--- !u!114 &8547375442678359146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8355538974299737929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d56c2c54d9a9b46974538827ed215a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 9180943220431378805}
+  projectilePrefab: {fileID: 6912966402700947078, guid: f29aa2e121deffb4abb1376408bffcb7, type: 3}
+  isFiring: 0
 --- !u!1 &8599641694500873251
 GameObject:
   m_ObjectHideFlags: 0
