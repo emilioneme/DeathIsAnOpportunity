@@ -127,12 +127,12 @@ public class PlayerUpgradeDataEditor : Editor
         EditorGUILayout.LabelField(Styles.JumpingHeader, EditorStyles.boldLabel);
         using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
         {
-            EditorGUILayout.Slider(jumpImpulseProp, 6f, 10f, Styles.JumpImpulse);
-            EditorGUILayout.IntSlider(maxAirJumpsProp, 0, 5, Styles.MaxAirJumps);
+            EditorGUILayout.Slider(jumpImpulseProp, 5f, 10f, Styles.JumpImpulse);
+            EditorGUILayout.IntSlider(maxAirJumpsProp, 0, 3, Styles.MaxAirJumps);
             //EditorGUILayout.Slider(coyoteTimeProp, .1f, 0.1f, Styles.CoyoteTime);
             //EditorGUILayout.Slider(jumpBufferProp, .1f, 0.1f, Styles.JumpBuffer);
-            //EditorGUILayout.Slider(fallGravityMultiplierProp, 1.5f, 1.5f, Styles.FallGravityMultiplier);
-            //EditorGUILayout.Slider(lowJumpGravityMultiplierProp, 1.7f, 1.7f, Styles.LowJumpGravityMultiplier);
+            EditorGUILayout.Slider(fallGravityMultiplierProp, 2.0f, 10f, Styles.FallGravityMultiplier);
+            EditorGUILayout.Slider(lowJumpGravityMultiplierProp, 2.5f, 15f, Styles.LowJumpGravityMultiplier);
         }
     }
 

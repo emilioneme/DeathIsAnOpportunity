@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4751403902578246033}
-  projectileCollider: {fileID: 0}
+  projectileCollider: {fileID: 4174966753223548367}
 --- !u!1 &7369104133393196956
 GameObject:
   m_ObjectHideFlags: 0

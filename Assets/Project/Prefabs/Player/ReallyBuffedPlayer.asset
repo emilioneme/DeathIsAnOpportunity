@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa46159313ec3e749847c21c1a3c90f1, type: 3}
   m_Name: ReallyBuffedPlayer
   m_EditorClassIdentifier: 
-  moveSpeed: 30
-  maxHorizontalSpeed: 45
-  groundAcceleration: 120
-  airAcceleration: 80
+  moveSpeed: 50
+  maxHorizontalSpeed: 75
+  groundAcceleration: 100
+  airAcceleration: 100
   groundLinearDrag: 12
   airLinearDrag: 4
-  jumpImpulse: 20
-  maxAirJumps: 5
+  jumpImpulse: 9
+  maxAirJumps: 3
   coyoteTime: 0.1
   jumpBuffer: 0.1
-  fallGravityMultiplier: 1.5
-  lowJumpGravityMultiplier: 1.7
+  fallGravityMultiplier: 2
+  lowJumpGravityMultiplier: 2.5
   fireRate: 20
   projectileSize: 0.28867513
   projectileDamage: 100
-  projectileSpeed: 80
+  projectileSpeed: 100
   projectilePath: 0
   projectileLife: 10
   projectilesPerShot: 12
   projectileSpreadRadius: 0.34641016
-  projectileAngleVariance: 5
+  projectileAngleVariance: 0
