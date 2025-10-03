@@ -379,14 +379,14 @@ MonoBehaviour:
   inputHub: {fileID: 7933732583096578165}
   orientation: {fileID: 5013192865990800188}
   rb: {fileID: 2715075145988002300}
-  moveSpeed: 10
-  maxHorizontalSpeed: 15
+  moveSpeed: 30
+  maxHorizontalSpeed: 45
   groundAcceleration: 40
-  airAcceleration: 15
+  airAcceleration: 30
   groundLinearDrag: 1
   airLinearDrag: 0.5
-  jumpImpulse: 7.5
-  maxAirJumps: 1
+  jumpImpulse: 10
+  maxAirJumps: 3
   coyoteTime: 0.1
   jumpBuffer: 0.1
   fallGravityMultiplier: 1.5
@@ -1190,7 +1190,7 @@ Transform:
   m_GameObject: {fileID: 5927013295340078667}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.15, y: 1.42, z: 71.97}
+  m_LocalPosition: {x: 47.15, y: 1.49, z: 71.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1243,14 +1243,14 @@ MonoBehaviour:
   inputHub: {fileID: 7933732583096578165}
   muzzle: {fileID: 276052842}
   projectilePrefab: {fileID: 6912966402700947078, guid: f29aa2e121deffb4abb1376408bffcb7, type: 3}
-  fireRate: 1
-  projectileSize: 0.1
-  projectileDamage: 10
-  projectileSpeed: 1
+  fireRate: 10
+  projectileSize: 0.2581989
+  projectileDamage: 30
+  projectileSpeed: 50
   projectilePath: 0
-  projectileLife: 3
-  projectilesPerShot: 1
-  projectileSpreadRadius: 1
+  projectileLife: 10
+  projectilesPerShot: 15
+  projectileSpreadRadius: 1.9364917
 --- !u!33 &9195812264480423608
 MeshFilter:
   m_ObjectHideFlags: 0

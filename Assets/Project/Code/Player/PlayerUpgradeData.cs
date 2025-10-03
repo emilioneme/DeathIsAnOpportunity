@@ -10,6 +10,10 @@ public enum ProjectilePathType
 [CreateAssetMenu(fileName = "PlayerUpgradeData", menuName = "Player/Upgrade Data")]
 public class PlayerUpgradeData : ScriptableObject
 {
+    private const float MoveToMaxSpeedRatio = 1.5f;
+    private const float BaseProjectileSize = 1f;
+    private const float BaseProjectileSpread = 0.5f;
+
     public event Action<PlayerUpgradeData> OnChanged;
 
     [Header("Movement")]
@@ -56,18 +60,42 @@ public class PlayerUpgradeData : ScriptableObject
     public float ProjectileSpeed => projectileSpeed;
     public ProjectilePathType ProjectilePath => projectilePath;
     public float ProjectileLife => projectileLife;
-    public int ProjectilesPerShot => Mathf.Max(1, projectilesPerShot);
-    public float ProjectileSpreadRadius => Mathf.Max(0f, projectileSpreadRadius);
+    public int ProjectilesPerShot => projectilesPerShot;
+    public float ProjectileSpreadRadius => projectileSpreadRadius;
 
     public void NotifyChanged()
     {
+        EnforceDerivedRelationships();
         OnChanged?.Invoke(this);
     }
 
 #if UNITY_EDITOR
     void OnValidate()
     {
+        EnforceDerivedRelationships();
         NotifyChanged();
     }
 #endif
+
+    private void EnforceDerivedRelationships()
+    {
+        if (moveSpeed < 0f)
+            moveSpeed = 0f;
+
+        float targetMaxSpeed = moveSpeed * MoveToMaxSpeedRatio;
+        if (!Mathf.Approximately(maxHorizontalSpeed, targetMaxSpeed))
+            maxHorizontalSpeed = targetMaxSpeed;
+
+        projectilesPerShot = Mathf.Max(1, projectilesPerShot);
+
+        float projectileCountScale = Mathf.Sqrt(projectilesPerShot);
+        float targetSize = Mathf.Max(0.05f, BaseProjectileSize / projectileCountScale);
+        float targetSpread = Mathf.Max(0f, BaseProjectileSpread * projectileCountScale);
+
+        if (!Mathf.Approximately(projectileSize, targetSize))
+            projectileSize = targetSize;
+
+        if (!Mathf.Approximately(projectileSpreadRadius, targetSpread))
+            projectileSpreadRadius = targetSpread;
+    }
 }

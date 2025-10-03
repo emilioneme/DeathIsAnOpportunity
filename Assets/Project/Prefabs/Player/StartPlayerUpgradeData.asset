@@ -25,10 +25,10 @@ MonoBehaviour:
   fallGravityMultiplier: 1.5
   lowJumpGravityMultiplier: 1.7
   fireRate: 1
-  projectileSize: 0.1
+  projectileSize: 1
   projectileDamage: 10
-  projectileSpeed: 1
+  projectileSpeed: 16.4
   projectilePath: 0
   projectileLife: 3
   projectilesPerShot: 1
-  projectileSpreadRadius: 1
+  projectileSpreadRadius: 0.5

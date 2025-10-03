@@ -4,11 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerInputHub))]
 public class PlayerProjectileShooter : MonoBehaviour
 {
-    private const int MaxProjectiles = 300;
+    private const int MaxProjectiles = 100;
+    private const float NormalPathSpeedMultiplier = 3f;
 
     [Header("References")]
     [SerializeField] private PlayerInputHub inputHub;
-    [SerializeField] private Transform projectileExit;
+    [SerializeField] private Transform muzzle;
     [SerializeField] private Projectile projectilePrefab;
 
     [Header("Combat Values")]
@@ -31,8 +32,8 @@ public class PlayerProjectileShooter : MonoBehaviour
         if (!inputHub)
             inputHub = GetComponent<PlayerInputHub>();
 
-        if (!projectileExit)
-            projectileExit = transform;
+        if (!muzzle)
+            muzzle = transform;
     }
 
     void Update()
@@ -41,7 +42,7 @@ public class PlayerProjectileShooter : MonoBehaviour
             fireCooldown -= Time.deltaTime;
 
         if (inputHub && inputHub.AttackHeld)
-            TryFire(projectileExit.forward);
+            TryFire(muzzle.forward);
     }
 
     public void ApplyUpgradeData(PlayerUpgradeData data)
@@ -61,7 +62,7 @@ public class PlayerProjectileShooter : MonoBehaviour
 
     public void TryFire(Vector3 fireDirection)
     {
-        if (!projectilePrefab || !projectileExit)
+        if (!projectilePrefab || !muzzle)
             return;
 
         if (fireCooldown > 0f)
@@ -85,7 +86,7 @@ public class PlayerProjectileShooter : MonoBehaviour
 
     private bool FireProjectiles(Vector3 fireDirection)
     {
-        Transform spawnPoint = projectileExit ? projectileExit : transform;
+        Transform spawnPoint = muzzle ? muzzle : transform;
         Vector3[] offsets = BuildSpreadOffsets(Mathf.Max(1, projectilesPerShot), projectileSpreadRadius);
         Quaternion projectileRotation = Quaternion.LookRotation(fireDirection, spawnPoint.up);
         bool firedAny = false;
@@ -101,7 +102,8 @@ public class PlayerProjectileShooter : MonoBehaviour
                 break;
 
             firedAny = true;
-            projectileInstance.Initialize(projectileDamage, projectileSpeed, projectileLife, projectilePath, projectileSize, gameObject);
+            float adjustedSpeed = projectileSpeed * (projectilePath == ProjectilePathType.Normal ? NormalPathSpeedMultiplier : 1f);
+            projectileInstance.Initialize(projectileDamage, adjustedSpeed, projectileLife, projectilePath, projectileSize, gameObject);
         }
 
         return firedAny;
