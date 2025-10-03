@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa46159313ec3e749847c21c1a3c90f1, type: 3}
   m_Name: StartPlayerUpgradeData
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  maxHorizontalSpeed: 7.5
-  groundAcceleration: 30
+  moveSpeed: 7.5
+  maxHorizontalSpeed: 11.25
+  groundAcceleration: 40
   airAcceleration: 10
   groundLinearDrag: 1
   airLinearDrag: 0.5
@@ -27,9 +27,9 @@ MonoBehaviour:
   fireRate: 0.5
   projectileSize: 1
   projectileDamage: 1
-  projectileSpeed: 1.5
+  projectileSpeed: 10
   projectilePath: 0
-  projectileLife: 1
+  projectileLife: 2
   projectilesPerShot: 1
   projectileSpreadRadius: 0.1
-  projectileAngleVariance: 0
+  projectileAngleVariance: 10

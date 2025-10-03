@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf4b2aeac3c29d49a4fe8f2ffdd3bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeData: {fileID: 11400000, guid: 88b311cf9473f7c4f9b0d6b115df8846, type: 2}
+  upgradeData: {fileID: 11400000, guid: 0d1398e837ee76b489c839137ee118b7, type: 2}
   movement: {fileID: 8562517218854292385}
   shooter: {fileID: 7197216428633678526}
 --- !u!114 &4068375691437283157
@@ -318,14 +318,14 @@ MonoBehaviour:
   inputHub: {fileID: 7060075047063132036}
   orientation: {fileID: 108547590883102623}
   rb: {fileID: 4513676673574381924}
-  moveSpeed: 30
-  maxHorizontalSpeed: 45
-  groundAcceleration: 40
-  airAcceleration: 30
+  moveSpeed: 5
+  maxHorizontalSpeed: 7.5
+  groundAcceleration: 30
+  airAcceleration: 10
   groundLinearDrag: 1
   airLinearDrag: 0.5
-  jumpImpulse: 10
-  maxAirJumps: 3
+  jumpImpulse: 5
+  maxAirJumps: 0
   coyoteTime: 0.1
   jumpBuffer: 0.1
   fallGravityMultiplier: 1.5
@@ -374,14 +374,6 @@ MonoBehaviour:
   inputHub: {fileID: 7060075047063132036}
   muzzle: {fileID: 373367527395672946}
   projectilePrefab: {fileID: 6912966402700947078, guid: f29aa2e121deffb4abb1376408bffcb7, type: 3}
-  fireRate: 10
-  projectileSize: 0.2581989
-  projectileDamage: 30
-  projectileSpeed: 50
-  projectilePath: 0
-  projectileLife: 10
-  projectilesPerShot: 15
-  projectileSpreadRadius: 1.9364917
 --- !u!1 &1447123475528729142
 GameObject:
   m_ObjectHideFlags: 0
