@@ -12,23 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa46159313ec3e749847c21c1a3c90f1, type: 3}
   m_Name: StartPlayerUpgradeData
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  maxHorizontalSpeed: 15
+  moveSpeed: 7.5
+  maxHorizontalSpeed: 11.25
   groundAcceleration: 40
-  airAcceleration: 15
+  airAcceleration: 10
   groundLinearDrag: 1
   airLinearDrag: 0.5
-  jumpImpulse: 7.5
-  maxAirJumps: 1
+  jumpImpulse: 5
+  maxAirJumps: 0
   coyoteTime: 0.1
   jumpBuffer: 0.1
-  fallGravityMultiplier: 1.5
-  lowJumpGravityMultiplier: 1.7
-  fireRate: 1
+  fallGravityMultiplier: 10
+  lowJumpGravityMultiplier: 15
+  fireRate: 0.5
   projectileSize: 1
-  projectileDamage: 10
-  projectileSpeed: 16.4
+  projectileDamage: 1
+  projectileSpeed: 10
   projectilePath: 0
-  projectileLife: 3
+  projectileLife: 2
   projectilesPerShot: 1
-  projectileSpreadRadius: 0.5
+  projectileSpreadRadius: 0.1
+  projectileAngleVariance: 10

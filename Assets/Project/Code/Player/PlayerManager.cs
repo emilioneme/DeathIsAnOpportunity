@@ -8,10 +8,10 @@ public class PlayerManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private PlayerMovementRB movement;
-    [SerializeField] private PlayerProjectileShooter shooter;
+    [SerializeField] private ProjectileShooter shooter;
 
     public PlayerUpgradeData UpgradeData => upgradeData;
-    public PlayerProjectileShooter Shooter => shooter;
+    public ProjectileShooter Shooter => shooter;
 
     void Awake()
     {
@@ -61,7 +61,7 @@ public class PlayerManager : MonoBehaviour
             movement = GetComponent<PlayerMovementRB>();
 
         if (!shooter)
-            shooter = GetComponent<PlayerProjectileShooter>();
+            shooter = GetComponent<ProjectileShooter>();
     }
 
     private void RefreshUpgradeData()

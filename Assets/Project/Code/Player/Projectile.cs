@@ -11,9 +11,8 @@ public class Projectile : MonoBehaviour
 
     private float damage;
     private float lifeTime;
-    private ProjectilePathType pathType;
     private GameObject owner;
-    private PlayerProjectileShooter poolOwner;
+    private ProjectileShooter poolOwner;
 
     public float Damage => damage;
 
@@ -43,16 +42,14 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Initialize(float damageValue, float speedValue, float lifeDuration, ProjectilePathType path, float size, GameObject instigator)
+    public void Initialize(float damageValue, float speedValue, float lifeDuration, float size, GameObject instigator)
     {
         damage = damageValue;
         lifeTime = lifeDuration;
-        pathType = path;
         owner = instigator;
 
         if (rb)
         {
-            rb.useGravity = pathType == ProjectilePathType.Normal;
             rb.linearVelocity = transform.forward * speedValue;
         }
 
@@ -65,7 +62,7 @@ public class Projectile : MonoBehaviour
             Invoke(nameof(HandleLifeComplete), lifeTime);
     }
 
-    public void SetPoolOwner(PlayerProjectileShooter shooter)
+    public void SetPoolOwner(ProjectileShooter shooter)
     {
         poolOwner = shooter;
     }
@@ -74,6 +71,10 @@ public class Projectile : MonoBehaviour
     {
         if (!other)
             return;
+        if (owner != other.gameObject && other.TryGetComponent(out Health health))
+        {
+            health.TakeDamage(damage);
+        }
 
         if (owner && other.transform.root == owner.transform)
             return;

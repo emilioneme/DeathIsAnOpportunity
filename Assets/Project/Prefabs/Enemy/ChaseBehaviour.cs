@@ -6,6 +6,7 @@ public class ChaseBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject target;
     [SerializeField] BreadcrumbManager breadcrumbs;
+    [SerializeField] Health health;
     
     private Vector3? currentBreadcrumb;
     private int lastSeenIndex = 0;
@@ -23,6 +24,7 @@ public class ChaseBehaviour : MonoBehaviour
 
     void Update()
     {
+        if(health.IsDead) gameObject.SetActive(false);
         // track breadcrumb index while LOS
         if (gameObject.HasLineOfSight( target, 6000)) Chase();
         else if (currentIndex < Mathf.Min(lastSeenIndex+10,breadcrumbs.lastIndex()) && currentIndex > 0 && lastSeenIndex > 0)
@@ -55,7 +57,7 @@ public class ChaseBehaviour : MonoBehaviour
         // currentIndex = breadcrumbs.closestBreadcrumbIndex(gameObject.transform.position);
         currentBreadcrumb = breadcrumbs.GetBreadcrumbAt(currentIndex);
         
-        transform.LookAt(Vector3.Lerp(transform.forward, target.transform.position, 0.5f));
+        transform.LookAt(target.transform);
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position+proximityOffsetDir, Time.deltaTime*(2f
             + (target.transform.position - transform.position).magnitude/5) ); 
     }

@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 1963435277722654648}
   - component: {fileID: 8298031205474632177}
   - component: {fileID: 5087757485900766150}
+  - component: {fileID: 7482033644447117167}
+  - component: {fileID: 8379622645561379899}
+  - component: {fileID: 460169544677986560}
   m_Layer: 0
   m_Name: Chaser
   m_TagString: Untagged
@@ -124,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   breadcrumbs: {fileID: 0}
+  health: {fileID: 7482033644447117167}
+  proximityOffsetDir: {x: 0, y: 0, z: 0}
 --- !u!135 &5087757485900766150
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -141,7 +146,65 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 7.99
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7482033644447117167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041284357882017041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fa5be912642c5419a967ed8f3a46d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  startAtMax: 1
+  invulnerable: 0
+  clampOverheal: 1
+  currentHealth: 100
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8379622645561379899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041284357882017041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d56c2c54d9a9b46974538827ed215a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 6967894193680291235}
+  projectilePrefab: {fileID: 6912966402700947078, guid: f29aa2e121deffb4abb1376408bffcb7, type: 3}
+  isFiring: 0
+--- !u!114 &460169544677986560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041284357882017041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae715d1d775efaa49a32e652ed3d0fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  shooter: {fileID: 8379622645561379899}

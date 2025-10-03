@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 7139297627635257116}
   - component: {fileID: 7096973723386007898}
   - component: {fileID: 2430379977172446145}
+  - component: {fileID: 9119103513103287990}
+  - component: {fileID: 1194228917901957806}
+  - component: {fileID: 878512431776797946}
   m_Layer: 0
   m_Name: Orbiter
   m_TagString: Untagged
@@ -122,3 +125,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  health: {fileID: 9119103513103287990}
+--- !u!114 &9119103513103287990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391165922559026800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fa5be912642c5419a967ed8f3a46d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  startAtMax: 1
+  invulnerable: 0
+  clampOverheal: 1
+  currentHealth: 100
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1194228917901957806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391165922559026800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d56c2c54d9a9b46974538827ed215a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 5301589306586234684}
+  projectilePrefab: {fileID: 6912966402700947078, guid: f29aa2e121deffb4abb1376408bffcb7, type: 3}
+  isFiring: 0
+--- !u!114 &878512431776797946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391165922559026800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae715d1d775efaa49a32e652ed3d0fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  shooter: {fileID: 1194228917901957806}

@@ -3,6 +3,7 @@ using UnityEngine;
 public class OrbiterBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject target;
+    [SerializeField] private Health health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,6 +13,7 @@ public class OrbiterBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health.IsDead) gameObject.SetActive(false);
         if (gameObject.HasLineOfSight( target, 50)) Orbit();
         else if (gameObject.HasLineOfSight(target, 10000)) Chase();
         else if (transform.position.y < 30) Fly();

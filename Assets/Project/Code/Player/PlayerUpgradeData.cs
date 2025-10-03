@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 public enum ProjectilePathType
@@ -12,7 +12,7 @@ public class PlayerUpgradeData : ScriptableObject
 {
     private const float MoveToMaxSpeedRatio = 1.5f;
     private const float BaseProjectileSize = 1f;
-    private const float BaseProjectileSpread = 0.5f;
+    private const float BaseProjectileSpread = .1f;
 
     public event Action<PlayerUpgradeData> OnChanged;
 
@@ -41,6 +41,7 @@ public class PlayerUpgradeData : ScriptableObject
     [SerializeField] private float projectileLife = 3f;
     [SerializeField] private int projectilesPerShot = 1;
     [SerializeField] private float projectileSpreadRadius = 0.5f;
+    [SerializeField] private float projectileAngleVariance = 5f;
 
     public float MoveSpeed => moveSpeed;
     public float MaxHorizontalSpeed => maxHorizontalSpeed;
@@ -62,6 +63,7 @@ public class PlayerUpgradeData : ScriptableObject
     public float ProjectileLife => projectileLife;
     public int ProjectilesPerShot => projectilesPerShot;
     public float ProjectileSpreadRadius => projectileSpreadRadius;
+    public float ProjectileAngleVariance => projectileAngleVariance;
 
     public void NotifyChanged()
     {
@@ -97,5 +99,8 @@ public class PlayerUpgradeData : ScriptableObject
 
         if (!Mathf.Approximately(projectileSpreadRadius, targetSpread))
             projectileSpreadRadius = targetSpread;
+
+        if (projectileAngleVariance < 0f)
+            projectileAngleVariance = 0f;
     }
 }
