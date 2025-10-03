@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerProjectileShooter : MonoBehaviour
 {
     private const int MaxProjectiles = 500;
-    private const float NormalPathSpeedMultiplier = 3f;
 
     [Header("References")]
     [SerializeField] private PlayerInputHub inputHub;
