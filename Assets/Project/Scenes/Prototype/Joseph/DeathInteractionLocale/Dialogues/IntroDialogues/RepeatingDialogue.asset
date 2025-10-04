@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85a0655c7a6bf6468c282888090ec72, type: 3}
   m_Name: RepeatingDialogue
   m_EditorClassIdentifier: 
-  dialogueId: 
-  lines: []
+  dialogueId: repeatFirstScene
+  isRepeatable: 1
+  lines:
+  - speakerName: Death
+    text: Uh...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: You've... Kind of already talked to me...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: And I've got nothing more to say.
+    voiceClip: {fileID: 0}

@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="772a308a-4188-4d98-b18e-efd52d6c9cd8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DeathIsAnOpportunity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DeathIsAnOpportunity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Code/Player/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Code/Player/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Code/Player/PlayerProjectileShooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Code/Player/ProjectileShooter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Code/Player/PlayerProjectileShooter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Code/Player/ProjectileShooter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Code/Player/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Code/Player/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemy/ChaseBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemy/ChaseBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemy/Chaser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemy/Chaser.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemy/Orbiter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemy/Orbiter.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemy/OrbiterBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemy/OrbiterBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/DeathRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/DeathRoom.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/EnemyTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/EnemyTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/skelehandController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/skelehandController.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

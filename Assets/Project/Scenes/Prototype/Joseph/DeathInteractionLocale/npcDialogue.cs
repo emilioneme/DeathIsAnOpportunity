@@ -5,6 +5,7 @@ using UnityEngine;
 public class NpcDialogue : ScriptableObject
 {
     public string dialogueId;
+    public bool isRepeatable;
     public DialogueLine[] lines;
 
 }

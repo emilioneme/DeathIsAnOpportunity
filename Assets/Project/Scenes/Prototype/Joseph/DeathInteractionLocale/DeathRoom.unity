@@ -646,6 +646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388239805}
   - component: {fileID: 388239806}
+  - component: {fileID: 388239807}
   m_Layer: 0
   m_Name: CutsceneManager
   m_TagString: Untagged
@@ -684,7 +685,19 @@ MonoBehaviour:
   nameText: {fileID: 1864411914}
   dialogueText: {fileID: 1938645822}
   playerMovement: {fileID: 4079821746044625758}
-  typingSpeed: 0.05
+  typingSpeed: 0.03
+--- !u!114 &388239807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388239803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4323923c6723f444b6bc59f5b001e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &415882570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0dc5b6aaf4c9b4da0d9b0f79f1bcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 027d97e89ae6476498cf3dff1266c320, type: 2}
+  dialogues:
+  - {fileID: 11400000, guid: 7102e3e1aec43a24abe678b039c80462, type: 2}
+  - {fileID: 11400000, guid: bf0ef7d9bb89da642b4193a31e488fdf, type: 2}
 --- !u!1 &1432144966
 GameObject:
   m_ObjectHideFlags: 0
@@ -70328,7 +70343,7 @@ MonoBehaviour:
   inputHub: {fileID: 0}
   orientation: {fileID: 4187071046311480392}
   cameraPivot: {fileID: 2245167523039142200}
-  mouseSensitivity: 0.9
+  mouseSensitivity: 0.5
   stickSensitivity: 120
   invertY: 0
   minPitch: -80
