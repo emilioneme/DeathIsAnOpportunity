@@ -13,17 +13,267 @@ MonoBehaviour:
   m_Name: FirstMeeting
   m_EditorClassIdentifier: 
   dialogueId: firstMeeting
+  isRepeatable: 0
   lines:
   - speakerName: Death
-    text: I'm Death Yippee!!
+    text: Wow, the floundering fish finally faces fateful failure.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: About time honestly.
     voiceClip: {fileID: 0}
   - speakerName: Player
-    text: I, too, am in this meme
+    text: Wh-What?
     voiceClip: {fileID: 0}
-  - speakerName: death
-    text: here is a really really really really really really really really really 
-      really really
+  - speakerName: The Internal Player
+    text: <I look about myself quickly, the space that surrounds me is suffocating.
+      I could taste the hurried attempts the devs had made at a transitional hub>
     voiceClip: {fileID: 0}
-  - speakerName: death
-    text: really really really long text.
+  - speakerName: The Internal Player
+    text: <They really couldn't have done this better, given the time frame?>
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Where am I?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Very good question!
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: That question is so good, in fact, that I think I will turn that back onto
+      you.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Where do YOU think you are? Hmmm?
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: <Severe confusion has me blinking, eye lids shuttered in rapid succession.>
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: <It was as if my mind were trying to fulfil some primal desire to restart
+      my vision>
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: <To restart my mind itself>
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Oh, this isn't a trick question by the way.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "If it\u2019s obvious then it\u2019s obvious ( ^ \u03C9 ^ ).\r\n"
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: 'Just say the first thing that comes to your mind!
+
+'
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Uh...
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: ...
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: ...am I in hell?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: ...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: ...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Wow.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Is it that bad?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: I know my realm is due for a bit of a spring cleaning but...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: I didn't think it was that bad.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "Like\u2026 to go straight to H- E- double hockey-sticks..."
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "No guess at Heaven, or The Afterlife, or even Limbo or something\u2026"
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "Just\u2026 Wow\u2026"
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "\u2026"
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: "\u2026"
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "\u2026"
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: "\u2026"
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: So uh... Is this the part where you judge me for my life or som-
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Huh?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Oh yeah!
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: 'Wait, I mean no! No judgement here. No moral judgement at least. '
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Cuz frankly, morality is a concept heavily steeped in mortality and materialism.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "It\u2019s\u2026 confusing to me. Too fluid, no objectivity."
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: But you know what is objective?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: My love!
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "That\u2019s right! My love is an objective measure that comes with an
+      integer scale."
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "It\u2019s empirical, fact-based, and vegan-friendly for the sake of some
+      of our devs!"
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: ...
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Your...
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: You're love?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "It\u2019s \u201Cyour\u201D actually, but yes (*\u2267\u03C9\u2266*)"
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: I mean, isn't that what you want?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: For years now, you've done nothing but look for me, searching me out unnecessarily.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: 'And althought I didn''t notice your touching attempts, I managed to finally
+      see them after you died. '
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: 'I couldn''t help but find you sooooo enduring! '
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: You mean endearing?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: ...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: No one likes a smartass dipshit. -1 love point for you~
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: <The strange creature snaps their fingers, and a sharp pain runs through
+      my chest>
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: "< It\u2019s not a physical pain, but it\u2019s SOMETHING. A soft rumbling
+      ache numbs my torso, subsiding the unpleasant feeling.>"
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Wh- What the hell was that!?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "My wrath, heehee (\u2044 \u2044\u2022\u2044\u03C9\u2044\u2022\u2044 \u2044)"
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Ngh...
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Who the hell are you...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: C'mon mate, it says my name right there in the text box.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "Anyways, if you don\u2019t want any more of what that was, you better
+      start trying to gain my WUV and ADOWASHUN from here on out."
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: ...
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: "<I look about myself. There\u2019s no way out for me. If this really was
+      the afterlife, and if this figure really was Death itself, then I didn\u2019t
+      have much room for recourse>"
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: <Appeasement was the only option I had. I have to relent for now>
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: "Fine\u2026 How would I go about doing something like that."
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "Hehe, knew you\u2019d come around!"
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: "If you want my love, you\u2019ve gotta bring me the souls of my enemies."
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Those creatures that just cut your Afterlife life short only a moment ago?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Yeah kill them.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: And then bring me their life essence yippee!
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Sure, I can do that... but uh-
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: But you're too weak and too worthless, and too unworthy of combat?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: And also you smell bad and you're disgusting and stupid?
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: ...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Heehee, don't worry about that. Dearest Death has got you covered!
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: <Another dreaded snap of the fingers. Knowledge courses through my head
+      and I crumple for a moment>
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: <My synapses throb and burn as data churns through my consciousness and
+      subconsciousness. Ancient chants turn my memories to slush>
+    voiceClip: {fileID: 0}
+  - speakerName: The Internal Player
+    text: <If this was Death's blessing, I'd rather take their wrath>
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: There we go! A lovely projectile-based attack spell with which to spam
+      your opponents with.
+    voiceClip: {fileID: 0}
+  - speakerName: Punished Player
+    text: Can...
+    voiceClip: {fileID: 0}
+  - speakerName: Punished Player
+    text: Can I swear in this game?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: No.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Now go back out there and get me a couple of those orb like soul things!
     voiceClip: {fileID: 0}
