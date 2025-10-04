@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faaf2597afc42df4c88f050e33a2e0b2, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  batchName: 
-  defaultState: 0
-  dialogues: []
+  batchName: Default
+  defaultState: 1
+  dialogues:
+  - {fileID: 11400000, guid: 8587c18f97cef644d991a59e7c817942, type: 2}
+  - {fileID: 11400000, guid: 1857a0be7a8c95140956068678d34184, type: 2}
