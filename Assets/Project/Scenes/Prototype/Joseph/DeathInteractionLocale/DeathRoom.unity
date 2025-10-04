@@ -70328,7 +70328,7 @@ MonoBehaviour:
   inputHub: {fileID: 0}
   orientation: {fileID: 4187071046311480392}
   cameraPivot: {fileID: 2245167523039142200}
-  mouseSensitivity: 1.5
+  mouseSensitivity: 0.9
   stickSensitivity: 120
   invertY: 0
   minPitch: -80

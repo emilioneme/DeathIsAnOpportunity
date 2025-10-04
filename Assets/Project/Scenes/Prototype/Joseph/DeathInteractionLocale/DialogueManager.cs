@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     private AudioSource voiceSource;
+    private AudioSource prevVoice;
 
     [SerializeField]
     private PlayerMovementRB playerMovement;
@@ -53,8 +55,13 @@ public class DialogueManager : MonoBehaviour
                 voiceSource.Stop();
                 voiceSource.clip = line.voiceClip;
                 voiceSource.Play();
+                prevVoice = voiceSource;
             }
-
+            else if (prevVoice != null)
+            {
+                voiceSource.Stop();
+                prevVoice = null;
+            }
             // iterate through each character of the dialogue line
             foreach (char c in line.text)
             {
