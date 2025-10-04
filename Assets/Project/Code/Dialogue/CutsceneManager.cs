@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class CutsceneManager : MonoBehaviour
 {
-    [SerializeField] private List<Cutscene>cutscenes; 
+    [SerializeField] private List<Cutscene>cutscenes;
+    [SerializeField] private PlayerMovementRB playerMovement;
     int cutsceneIndex = 0;
     public TextMeshProUGUI textComponent;
     public float textSpeed;
@@ -15,8 +16,20 @@ public class CutsceneManager : MonoBehaviour
     public void Play()
     {
         textBox.active = cutsceneIndex  == cutscenes.Count ? false : true;
-        if(cutsceneIndex < cutscenes.Count) StartCoroutine(TypeLine());
-        else cutsceneIndex = 0;
+        bool finished = cutsceneIndex == cutscenes.Count;
+
+        textBox.SetActive(!finished); // fixed deprecated "active"
+
+        if (!finished)
+        {
+            playerMovement.CanMove = false; // freeze
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            cutsceneIndex = 0;
+            playerMovement.CanMove = true; // unfreeze
+        }
     }
 
     IEnumerator TypeLine()

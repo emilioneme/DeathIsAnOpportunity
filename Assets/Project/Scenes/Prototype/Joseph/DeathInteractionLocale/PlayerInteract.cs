@@ -9,7 +9,7 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            float interactRange = 3f;
+            float interactRange = 4f;
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
             if (Physics.Raycast(ray, out RaycastHit hit, interactRange))

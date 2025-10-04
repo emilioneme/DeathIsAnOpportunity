@@ -8,7 +8,11 @@ public class Health : MonoBehaviour
     [SerializeField, Min(1f)] private float maxHealth = 100f;
     [SerializeField] private bool startAtMax = true;
     [SerializeField] private bool invulnerable = false;
+    [SerializeField] GameObject DeathParticles;
+    [SerializeField] GameObject DamageParticles;
+
     [SerializeField, Tooltip("When true, healing cannot exceed Max Health.")]
+
     private bool clampOverheal = true;
 
     // Hidden: shown by the custom inspector as a bar + slider
@@ -67,10 +71,14 @@ public class Health : MonoBehaviour
         {
             OnDamaged?.Invoke();
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
+            if (DamageParticles != null)
+                Destroy(Instantiate(DamageParticles, transform.position, Quaternion.identity), 3f);
         }
 
         if (currentHealth <= 0f)
             OnDeath?.Invoke();
+            if(DeathParticles != null)
+                Destroy(Instantiate(DeathParticles, transform.position, Quaternion.identity), 3f);
 
         return prev - currentHealth;
     }

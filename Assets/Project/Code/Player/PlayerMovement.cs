@@ -15,6 +15,7 @@ public class PlayerMovementRB : MonoBehaviour
     [SerializeField] private float airAcceleration = 15f;    // weaker air control
     [SerializeField] private float groundLinearDrag = 6f;
     [SerializeField] private float airLinearDrag = 0.5f;
+    public bool CanMove { get; set; } = true;
 
     [Header("Jumping")]
     [SerializeField] private float jumpImpulse = 7.5f; // physics-based jump (Impulse)
@@ -80,6 +81,12 @@ public class PlayerMovementRB : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!CanMove)
+        {
+            rb.linearVelocity = Vector3.zero; // stop rigidbody movement
+            return; // skip movement code
+        }
+
         // Try to consume buffered jump (this allows the player to press jump slightly before landing)
         if (Time.time - lastJumpPressedTime <= jumpBuffer)
         {
@@ -105,7 +112,9 @@ public class PlayerMovementRB : MonoBehaviour
             MoveTowards(desired);
         CapHorizontalSpeed(maxHorizontalSpeed);
         rb.linearDamping = grounded ? groundLinearDrag : airLinearDrag;
+    
     }
+
 
     // --- Helpers ---
 
