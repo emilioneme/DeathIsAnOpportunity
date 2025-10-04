@@ -9,7 +9,7 @@ public class ProjectileShooter : MonoBehaviour
     [SerializeField] private Transform muzzle;
     [SerializeField] private Projectile projectilePrefab;
 
-    private float fireRate = 2f;
+    public float fireRate = 2f;
     private float projectileSize = 1f;
     private float projectileDamage = 10f;
     private float projectileSpeed = 20f;
