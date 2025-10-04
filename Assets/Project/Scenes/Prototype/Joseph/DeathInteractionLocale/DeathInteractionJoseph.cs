@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class DeathInteractionJoseph : MonoBehaviour, IInteractable
 { 
-    [SerializeField] private CutsceneManager cutsceneManager;
+    [SerializeField] private NpcDialogue dialogue;
     public void Interact()
     {
-        cutsceneManager.Play();
+        if (!DialogueManager.Instance.IsDialoguePlaying)
+        {
+            DialogueManager.Instance.StartDialogue(dialogue);
+        }
     }
 }
