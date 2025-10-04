@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class OrbiterBehaviour_Al : MonoBehaviour
 {
+    [Header("Enemy")]
+    [SerializeField] private Health health;
     [Header("Target")]
     [SerializeField] private GameObject target;
     [Header("Line of Sight")]
@@ -28,6 +30,7 @@ public class OrbiterBehaviour_Al : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health.IsDead) gameObject.SetActive(false);
         if (gameObject.HasLineOfSight(target, orbitLOS))
         {
             Orbit();
@@ -79,13 +82,13 @@ public class OrbiterBehaviour_Al : MonoBehaviour
         transform.LookAt(target.transform.position);
     }
 
-    private void Fly()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(0, 100f, 0), flySpeed * Time.deltaTime);
+    // private void Fly()
+    // {
+    //     transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(0, 100f, 0), flySpeed * Time.deltaTime);
 
-        // Optional: look at the target
-        transform.LookAt(target.transform.position);
-    }
+    //     // Optional: look at the target
+    //     transform.LookAt(target.transform.position);
+    // }
 
     private void FlyUpAndDown()
     {
