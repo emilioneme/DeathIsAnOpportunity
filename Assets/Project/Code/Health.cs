@@ -71,13 +71,14 @@ public class Health : MonoBehaviour
         {
             OnDamaged?.Invoke();
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
-            Destroy(Instantiate(DamageParticles, transform.position, Quaternion.identity), 3f);
+            if (DamageParticles != null)
+                Destroy(Instantiate(DamageParticles, transform.position, Quaternion.identity), 3f);
         }
 
         if (currentHealth <= 0f)
             OnDeath?.Invoke();
-            Destroy(Instantiate(DeathParticles, transform.position, Quaternion.identity), 3f);
-
+            if(DeathParticles != null)
+                Destroy(Instantiate(DeathParticles, transform.position, Quaternion.identity), 3f);
 
         return prev - currentHealth;
     }
