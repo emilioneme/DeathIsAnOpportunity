@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 4957755435589929446}
   - component: {fileID: 803524155214033288}
   - component: {fileID: 5656741555391434108}
+  - component: {fileID: 8327963502650249713}
   m_Layer: 3
   m_Name: PlayerPrefab3.0
   m_TagString: Player
@@ -581,7 +582,7 @@ MonoBehaviour:
   groundCheckRadius: 0.1
   groundLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
 --- !u!114 &6559037123344752598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +667,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 2032224988920597577}
   sceneManager: {fileID: 0}
+--- !u!114 &8327963502650249713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769128317685393318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38a189c568be544cb36b737671fb93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 0}
+  damageEffect: {fileID: 7112509057590789649, guid: af05fc32a76a784418e72e9769221c08, type: 3}
 --- !u!1 &6430969058671658156
 GameObject:
   m_ObjectHideFlags: 0

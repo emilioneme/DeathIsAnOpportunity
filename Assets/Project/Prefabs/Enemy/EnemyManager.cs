@@ -9,7 +9,14 @@ public class EnemyManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        enemyShooter.ApplyUpgradeData(enemyUpgradeData);
+        if (enemyShooter && enemyUpgradeData)
+        {
+            enemyShooter.ApplyUpgradeData(enemyUpgradeData);
+        }
+        else
+        {
+            Debug.LogWarning("EnemyManager: Missing enemyShooter or enemyUpgradeData reference.");   
+        }
     }
 
     // Update is called once per frame

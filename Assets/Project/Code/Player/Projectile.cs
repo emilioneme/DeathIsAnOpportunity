@@ -79,7 +79,7 @@ public class Projectile : MonoBehaviour
         if (owner && other.transform.root == owner.transform)
             return;
 
-        Deactivate();
+        //Deactivate();
     }
 
     private void HandleLifeComplete()

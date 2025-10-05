@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa46159313ec3e749847c21c1a3c90f1, type: 3}
-  m_Name: ChaserData
+  m_Name: GroundThingy
   m_EditorClassIdentifier: 
   moveSpeed: 7
   maxHorizontalSpeed: 10.5
@@ -25,10 +25,10 @@ MonoBehaviour:
   fallGravityMultiplier: 2
   lowJumpGravityMultiplier: 2.5
   fireRate: 0.5
-  projectileSize: 0.57735026
-  projectileDamage: 11
+  projectileSize: 0.35355338
+  projectileDamage: 1.8
   projectileSpeed: 10
   projectileLife: 2
-  projectilesPerShot: 3
-  projectileSpreadRadius: 0.17320508
-  projectileAngleVariance: 8.22
+  projectilesPerShot: 8
+  projectileSpreadRadius: 0.28284273
+  projectileAngleVariance: 10

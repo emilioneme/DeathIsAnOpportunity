@@ -151,13 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fa5be912642c5419a967ed8f3a46d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10
   startAtMax: 1
   invulnerable: 0
   DeathParticles: {fileID: 0}
   DamageParticles: {fileID: 0}
   clampOverheal: 1
-  currentHealth: 100
+  currentHealth: 10
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -291,6 +291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde2a1692c42dad4880902a89218a567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyUpgradeData: {fileID: 11400000, guid: 5daac9a9469148e45b017175974000e1, type: 2}
+  enemyUpgradeData: {fileID: 11400000, guid: 0f1ee6ac8b40248458fff0adf0083190, type: 2}
   enemyShooter: {fileID: 2065460405492586074}
   health: {fileID: 4979326667050461051}

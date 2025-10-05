@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa46159313ec3e749847c21c1a3c90f1, type: 3}
-  m_Name: ChaserData
+  m_Name: Orbiter
   m_EditorClassIdentifier: 
-  moveSpeed: 7
-  maxHorizontalSpeed: 10.5
+  moveSpeed: 7.5
+  maxHorizontalSpeed: 11.25
   groundAcceleration: 40
   airAcceleration: 15
   groundLinearDrag: 6
@@ -25,10 +25,10 @@ MonoBehaviour:
   fallGravityMultiplier: 2
   lowJumpGravityMultiplier: 2.5
   fireRate: 0.5
-  projectileSize: 0.57735026
-  projectileDamage: 11
-  projectileSpeed: 10
-  projectileLife: 2
-  projectilesPerShot: 3
-  projectileSpreadRadius: 0.17320508
-  projectileAngleVariance: 8.22
+  projectileSize: 0.70710677
+  projectileDamage: 14.1
+  projectileSpeed: 73.5
+  projectileLife: 3.25
+  projectilesPerShot: 2
+  projectileSpreadRadius: 0.14142136
+  projectileAngleVariance: 1.16
