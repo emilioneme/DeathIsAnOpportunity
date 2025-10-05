@@ -664,7 +664,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1128377793149330829}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8496412915834451847
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +688,6 @@ GameObject:
   - component: {fileID: 6275610618146883002}
   - component: {fileID: 3788234534962998375}
   - component: {fileID: 8843107711891218468}
-  - component: {fileID: 6188173261200880900}
   m_Layer: 5
   m_Name: UpgradeEntry
   m_TagString: Untagged
@@ -745,19 +756,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6188173261200880900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8496412915834451847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834e9401683897e4f9a55d29a7d7ee06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 5614080944644790541}
-  descriptionText: {fileID: 5435978312651319260}
-  costText: {fileID: 5934501848733967076}
-  selectButton: {fileID: 6368766792460690462}

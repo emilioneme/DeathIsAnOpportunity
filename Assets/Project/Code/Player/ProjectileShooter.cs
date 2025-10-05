@@ -45,14 +45,14 @@ public class ProjectileShooter : MonoBehaviour
         if (!data)
             return;
 
-        fireRate = data.FireRate;
-        projectileSize = data.ProjectileSize;
-        projectileDamage = data.ProjectileDamage;
-        projectileSpeed = data.ProjectileSpeed;
-        projectileLife = data.ProjectileLife;
-        projectilesPerShot = Mathf.Max(1, data.ProjectilesPerShot);
-        projectileSpreadRadius = data.ProjectileSpreadRadius;
-        projectileAngleVariance = data.ProjectileAngleVariance;
+        fireRate = data.fireRate;
+        projectileSize = data.projectileSize;
+        projectileDamage = data.projectileDamage;
+        projectileSpeed = data.projectileSpeed;
+        projectileLife = data.projectileLife;
+        projectilesPerShot = Mathf.Max(1, data.projectilesPerShot);
+        projectileSpreadRadius = data.projectileSpreadRadius;
+        projectileAngleVariance = data.projectileAngleVariance;
     }
     public bool CanFire => fireCooldown <= 0f;
     public void TryFire(Vector3 fireDirection)

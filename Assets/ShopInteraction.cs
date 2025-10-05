@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class ShopInteraction : MonoBehaviour, IInteractable
 {
-    [SerializeField] private List<PlayerUpgradeData> availableUpgrades;
+    public GameManager GameManager;
+
     [Header("References")]
     [SerializeField] private GameObject shopUI;                 // The UI Panel (Canvas child)
     [SerializeField] private PlayerMovementRB playerMovement;   // Player movement controller
     [SerializeField] private PlayerCameraLook playerCameraLook; // Camera look controller
 
     private bool isShopOpen = false;
+    private PlayerUpgradeData upgradeData;
 
+    private void Awake()
+    {
+        GameManager = GetComponent<GameManager>();
+        upgradeData = GameManager.upgradeData;
+    }
     public void Interact()
     {
         if (!isShopOpen)
@@ -55,18 +62,13 @@ public class ShopInteraction : MonoBehaviour, IInteractable
         }
     }
 
-    public void SelectUpgrade(PlayerUpgradeData data)
-    {
-        Debug.Log($"Selected upgrade: {data.name}");
-
-        // Apply upgrade to GameManager
-        GameManager.Instance.upgradeData = data;
-
-        // Optional: notify TimelineTracker for persistence
-        TimelineTracker.Instance.SetUpgrade(data.name, 1f); // value can be anything you like
-
-        // Optionally close shop after selection
-        CloseShop();
-    }
+    //public void SelectUpgrade(string upgrade)
+    //{
+    //    switch (upgrade) {
+    //        case "moveSpeed":
+    //            if (upgrades.MoveSpeed < 100) upgrades.moveSpeed += 10;
+    //            break;
+    //        case ""
+    //}
 
 }

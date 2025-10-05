@@ -40,18 +40,18 @@ public class PlayerMovementRB : MonoBehaviour
     {
         if (data == null) return;
 
-        moveSpeed = data.MoveSpeed;
-        maxHorizontalSpeed = data.MaxHorizontalSpeed;
-        groundAcceleration = data.GroundAcceleration;
-        airAcceleration = data.AirAcceleration;
-        groundLinearDrag = data.GroundLinearDrag;
-        airLinearDrag = data.AirLinearDrag;
-        jumpImpulse = data.JumpImpulse;
-        maxAirJumps = data.MaxAirJumps;
-        coyoteTime = data.CoyoteTime;
-        jumpBuffer = data.JumpBuffer;
-        fallGravityMultiplier = data.FallGravityMultiplier;
-        lowJumpGravityMultiplier = data.LowJumpGravityMultiplier;
+        moveSpeed = data.moveSpeed;
+        maxHorizontalSpeed = data.maxHorizontalSpeed;
+        groundAcceleration = data.groundAcceleration;
+        airAcceleration = data.airAcceleration;
+        groundLinearDrag = data.groundLinearDrag;
+        airLinearDrag = data.airLinearDrag;
+        jumpImpulse = data.jumpImpulse;
+        maxAirJumps = data.maxAirJumps;
+        coyoteTime = data.coyoteTime;
+        jumpBuffer = data.jumpBuffer;
+        fallGravityMultiplier = data.fallGravityMultiplier;
+        lowJumpGravityMultiplier = data.lowJumpGravityMultiplier;
     }
 
     void Awake()
