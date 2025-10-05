@@ -1303,7 +1303,7 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 30880b25fc8627d449b1621e75097a63, type: 2}
   timeBetweenWaves: 5
-  playerRef: {fileID: 550551567}
+  playerRef: {fileID: 8239445945318502422}
   chaserConfig: {fileID: 11400000, guid: f6fccf110f23b894383f290647b04de9, type: 2}
   orbiterConfig: {fileID: 11400000, guid: 2393784925edcb44dac8fe765e3dd61b, type: 2}
   flankerConfig: {fileID: 11400000, guid: bf6415f9d33690e4a87e587688de0595, type: 2}
@@ -38359,7 +38359,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6634325005846317162, guid: 031cf8b7052aff14daf575ab5fe76580, type: 3}
   m_PrefabInstance: {fileID: 8239445945318502421}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8239445945318502422}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0d95a0508859134c9eee3f1d29a997e, type: 3}
@@ -38512,6 +38512,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 031cf8b7052aff14daf575ab5fe76580, type: 3}
+--- !u!1 &8239445945318502422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5769128317685393318, guid: 031cf8b7052aff14daf575ab5fe76580, type: 3}
+  m_PrefabInstance: {fileID: 8239445945318502421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -38519,3 +38524,4 @@ SceneRoots:
   - {fileID: 1339696835}
   - {fileID: 2006529964}
   - {fileID: 8239445945318502421}
+  - {fileID: 469249373}
