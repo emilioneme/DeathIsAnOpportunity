@@ -3,18 +3,24 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovementRB))]
 public class PlayerManager : MonoBehaviour
 {
+    public GameManager GameManager;
+
     [Header("Data")]
     [SerializeField] private PlayerUpgradeData upgradeData;
 
     [Header("References")]
     [SerializeField] private PlayerMovementRB movement;
     [SerializeField] private ProjectileShooter shooter;
+    [SerializeField] private Health health;
 
     public PlayerUpgradeData UpgradeData => upgradeData;
     public ProjectileShooter Shooter => shooter;
 
     void Awake()
     {
+        GameManager = GetComponent<GameManager>();
+        upgradeData = GameManager.upgradeData;
+        ApplyUpgradeData(upgradeData);
         CacheComponents();
         RefreshUpgradeData();
     }

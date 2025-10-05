@@ -1,7 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
+
+
 
 public class ShopInteraction : MonoBehaviour, IInteractable
 {
+    [SerializeField] private List<PlayerUpgradeData> availableUpgrades;
     [Header("References")]
     [SerializeField] private GameObject shopUI;                 // The UI Panel (Canvas child)
     [SerializeField] private PlayerMovementRB playerMovement;   // Player movement controller
