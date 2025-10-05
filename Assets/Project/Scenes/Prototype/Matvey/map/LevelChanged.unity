@@ -1332,56 +1332,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1fee848802532672bc2388e5d4e291d, type: 3}
   m_PrefabInstance: {fileID: 654681102}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &469249371
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 469249373}
-  - component: {fileID: 469249372}
-  m_Layer: 0
-  m_Name: EnemySpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &469249372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469249371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b69750ff6cdb948a945e6bb0463e32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnAreaCenter: {x: 0, y: 3.1, z: 0}
-  spawnAreaSize: {x: 50.7, y: 8.7, z: 69.07}
-  maxDistanceFromNavMesh: 10
-  waves:
-  - {fileID: 11400000, guid: 30880b25fc8627d449b1621e75097a63, type: 2}
-  timeBetweenWaves: 5
---- !u!4 &469249373
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469249371}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8600147, y: -13.140263, z: -1.2928718}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &476711219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c737922a82984e4d87c95fbff82ba9f, type: 3}
@@ -39274,4 +39224,3 @@ SceneRoots:
   - {fileID: 1339696835}
   - {fileID: 1426318668}
   - {fileID: 2006529964}
-  - {fileID: 469249373}

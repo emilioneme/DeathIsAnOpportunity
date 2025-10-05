@@ -54,7 +54,7 @@ public class ProjectileShooter : MonoBehaviour
         projectileSpreadRadius = data.ProjectileSpreadRadius;
         projectileAngleVariance = data.ProjectileAngleVariance;
     }
-
+    public bool CanFire => fireCooldown <= 0f;
     public void TryFire(Vector3 fireDirection)
     {
         if (!projectilePrefab || !muzzle)
