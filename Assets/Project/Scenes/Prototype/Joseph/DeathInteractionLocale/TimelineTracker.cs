@@ -10,6 +10,7 @@ public class TimelineTracker : MonoBehaviour
 
     private HashSet<string> completedEvents = new HashSet<string>();
     private Dictionary<string, bool> eventFlags = new Dictionary<string, bool>();
+    private Dictionary<string, float> upgradeTracker = new Dictionary<string, float>();
     private string saveFilePath;
 
     [Serializable]
@@ -19,10 +20,17 @@ public class TimelineTracker : MonoBehaviour
         public bool value;
     }
     [Serializable]
+    public class SerializableUpgrade
+    {
+        public string key;
+        public float fvalue;
+    }
+    [Serializable]
     private class SaveData
     {
         public List<string> completedEvents;
         public List<SerializableFlag> eventFlags;
+        public List<SerializableUpgrade> upgradeTracker;
     }
 
 
@@ -83,6 +91,30 @@ public class TimelineTracker : MonoBehaviour
         }
     }
 
+    // upgradeTracker checks and implementation
+    public bool HasUpgrade(string eventId) => upgradeTracker.ContainsKey(eventId);
+    public float GetUpgrade(string upgradeId)
+    {
+        if (upgradeTracker.TryGetValue(upgradeId, out float value))
+        {
+            return value;
+        }
+
+        Debug.LogWarning($"Event '{upgradeTracker}' does not exist!");
+        return 0f; // default
+    }
+    public void SetUpgrade(string upgradeId, float value)
+    {
+        if (upgradeTracker.ContainsKey(upgradeId))
+        {
+            upgradeTracker[upgradeId] = value; // update existing
+        }
+        else
+        {
+            upgradeTracker.Add(upgradeId, value); // add new
+        }
+    }
+
     public List<string> GetAllCompletedEvents() => new List<string>(completedEvents);
 
     private void SaveProgress(string saveFilePath)
@@ -90,12 +122,18 @@ public class TimelineTracker : MonoBehaviour
         var data = new SaveData
         {
             completedEvents = new List<string>(completedEvents),
-            eventFlags = new List<SerializableFlag>()
+            eventFlags = new List<SerializableFlag>(),
+            upgradeTracker = new List<SerializableUpgrade>()
         };
 
         foreach (var flag in eventFlags)
         {
             data.eventFlags.Add(new SerializableFlag { key = flag.Key, value = flag.Value });
+        }
+
+        foreach (var upgrade in upgradeTracker)
+        {
+            data.upgradeTracker.Add(new SerializableUpgrade { key = upgrade.Key, fvalue = upgrade.Value });
         }
 
         string json = JsonUtility.ToJson(data, true);
@@ -128,6 +166,15 @@ public class TimelineTracker : MonoBehaviour
                 }
             }
 
+            upgradeTracker.Clear();
+            if (data.upgradeTracker != null)
+            {
+                foreach (var upgrade in data.upgradeTracker)
+                {
+                    this.SetUpgrade(upgrade.key, upgrade.fvalue);
+                }
+            }
+
             Debug.Log("Timeline progress loaded successfully.");
         }
         catch (Exception ex)
@@ -146,14 +193,37 @@ public class TimelineTracker : MonoBehaviour
         }
     }
 
-    #if UNITY_EDITOR
-        [ContextMenu("Reset Progress")]
-        private void ResetProgress()
+    private void ResetProgress()
+    {
+        completedEvents.Clear();
+        eventFlags.Clear();
+        upgradeTracker.Clear();
+        SaveProgress(Path.Combine(saveFilePath, "../saveFile.json"));
+        Debug.Log("[TimelineTracker] Progress reset.");
+    }
+
+#if UNITY_EDITOR
+    [ContextMenu("Reset Progress")]
+        private void DebugReset()
         {
             completedEvents.Clear();
             eventFlags.Clear();
+            upgradeTracker.Clear();
             SaveProgress(Path.Combine(Application.dataPath, "../saveFile.json"));
             Debug.Log("[TimelineTracker] Progress reset.");
         }
-    #endif
+#endif
+
+#if UNITY_EDITOR
+    [ContextMenu("Add Progress")]
+    private void DebugAddProgress()
+    {
+        completedEvents.Clear();
+        eventFlags.Clear();
+        upgradeTracker.Add("test", 0.1f);
+        Debug.Log(this.HasUpgrade("test"));
+        SaveProgress(Path.Combine(Application.dataPath, "../saveFile.json"));
+        Debug.Log("[TimelineTracker] Progress Added.");
+    }
+#endif
 }
