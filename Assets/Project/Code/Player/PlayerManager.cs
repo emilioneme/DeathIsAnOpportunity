@@ -103,4 +103,14 @@ public class PlayerManager : MonoBehaviour
         if (data == upgradeData)
             RefreshUpgradeData();
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EnemyProjectile"))
+        {
+            Projectile projectile = other.GetComponent<Projectile>();
+            health.TakeDamage(projectile.Damage);
+            Debug.Log("Player hit by enemy projectile for " + projectile.Damage + " damage.");
+        }
+    }
 }

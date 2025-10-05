@@ -225,7 +225,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.35252434, g: 0.8113208, b: 0.038269844, a: 1}
+      maxColor: {r: 0.9150943, g: 0.26084366, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4846,7 +4846,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: eb4610f290073d54cb6f1523f57da3ed, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 4338cd0babc314840a1139a971e16f82, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4f4da9579ac76a644bf21a46034c09de, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4944,15 +4944,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b45a23c21784147a83ea66ac756f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PitchRandomizerOffset: 0.1
+  PitchRandomizerOffset: 0.4
   AudioSource: {fileID: 3936400437193000240}
   AudioClips:
-  - {fileID: 8300000, guid: 4338cd0babc314840a1139a971e16f82, type: 3}
-  - {fileID: 8300000, guid: 3ac96c3bf8556114c9fccdb809bbdc5c, type: 3}
-  - {fileID: 8300000, guid: c344390d66271874381b2548821b69fd, type: 3}
-  - {fileID: 8300000, guid: 9d547d1a2c741ab45a0fad012c9e81eb, type: 3}
-  - {fileID: 8300000, guid: c8c9772c827c9654eac29c1b8b056698, type: 3}
-  PlayOnStart: 0
+  - {fileID: 8300000, guid: 4f4da9579ac76a644bf21a46034c09de, type: 3}
+  PlayOnStart: 1
 --- !u!1 &6952560664003574418
 GameObject:
   m_ObjectHideFlags: 0

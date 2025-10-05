@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa46159313ec3e749847c21c1a3c90f1, type: 3}
-  m_Name: StartPlayerUpgradeData
+  m_Name: ChaserData
   m_EditorClassIdentifier: 
-  moveSpeed: 7.5
-  maxHorizontalSpeed: 11.25
+  moveSpeed: 7
+  maxHorizontalSpeed: 10.5
   groundAcceleration: 40
-  airAcceleration: 10
-  groundLinearDrag: 1
+  airAcceleration: 15
+  groundLinearDrag: 6
   airLinearDrag: 0.5
-  jumpImpulse: 5
-  maxAirJumps: 0
-  coyoteTime: 0.1
-  jumpBuffer: 0.1
+  jumpImpulse: 7.5
+  maxAirJumps: 1
+  coyoteTime: 0.12
+  jumpBuffer: 0.12
   fallGravityMultiplier: 2
   lowJumpGravityMultiplier: 2.5
-  fireRate: 0.5
-  projectileSize: 1
-  projectileDamage: 1
+  fireRate: 7.5
+  projectileSize: 0.70710677
+  projectileDamage: 27.1
   projectileSpeed: 10
-  projectileLife: 2
-  projectilesPerShot: 1
-  projectileSpreadRadius: 0.1
-  projectileAngleVariance: 10
+  projectileLife: 3.25
+  projectilesPerShot: 2
+  projectileSpreadRadius: 0.14142136
+  projectileAngleVariance: 5
