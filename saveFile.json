@@ -1,4 +1,7 @@
 {
-    "completedEvents": [],
+    "completedEvents": [
+        "Intro",
+        "DefaultRepeating"
+    ],
     "eventFlags": []
 }
