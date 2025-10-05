@@ -22,7 +22,7 @@ public class HoverHand : MonoBehaviour
         // Apply hover relative to current position
         transform.localPosition = new Vector3(
             transform.localPosition.x,
-            hoverOffset + noiseOffset-0.4f,
+            hoverOffset + noiseOffset-0.3f,
             transform.localPosition.z
         );
     }

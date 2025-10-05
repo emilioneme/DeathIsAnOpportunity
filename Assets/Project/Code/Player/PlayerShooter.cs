@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShooter : MonoBehaviour
@@ -14,6 +15,11 @@ public class PlayerShooter : MonoBehaviour
         projectileShooter.isFiring = true;
         Debug.Log("Shooting");
         // Example: reset shooting flag
+    }
+
+    private void Start()
+    {
+        playerInputHub.OnFingerPressed += ()=>animator.SetTrigger("Finger");
     }
 
     private void Update()
