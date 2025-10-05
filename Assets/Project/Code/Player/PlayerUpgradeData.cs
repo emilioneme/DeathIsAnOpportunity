@@ -42,26 +42,34 @@ public class PlayerUpgradeData : ScriptableObject
     [SerializeField] private float projectileSpreadRadius = 0.5f;
     [SerializeField] private float projectileAngleVariance = 5f;
 
-    public float MoveSpeed => moveSpeed;
-    public float MaxHorizontalSpeed => maxHorizontalSpeed;
-    public float GroundAcceleration => groundAcceleration;
-    public float AirAcceleration => airAcceleration;
-    public float GroundLinearDrag => groundLinearDrag;
-    public float AirLinearDrag => airLinearDrag;
-    public float JumpImpulse => jumpImpulse;
-    public int MaxAirJumps => maxAirJumps;
-    public float CoyoteTime => coyoteTime;
-    public float JumpBuffer => jumpBuffer;
-    public float FallGravityMultiplier => fallGravityMultiplier;
-    public float LowJumpGravityMultiplier => lowJumpGravityMultiplier;
-    public float FireRate => fireRate;
-    public float ProjectileSize => projectileSize;
-    public float ProjectileDamage => projectileDamage;
-    public float ProjectileSpeed => projectileSpeed;
-    public float ProjectileLife => projectileLife;
-    public int ProjectilesPerShot => projectilesPerShot;
-    public float ProjectileSpreadRadius => projectileSpreadRadius;
-    public float ProjectileAngleVariance => projectileAngleVariance;
+    // -------- DON'T INCLUDE IN SHOP ------------- //
+    public float GroundLinearDrag => groundLinearDrag; // 
+    public float MaxHorizontalSpeed => maxHorizontalSpeed;     // -------- DON'T INCLUDE IN SHOP ------------- //
+    public float CoyoteTime => coyoteTime;     // -------- DON'T INCLUDE IN SHOP ------------- //
+    public float JumpBuffer => jumpBuffer;    // -------- DON'T INCLUDE IN SHOP ------------- //
+    public float FallGravityMultiplier => fallGravityMultiplier;    // -------- DON'T INCLUDE IN SHOP ------------- //
+    public float LowJumpGravityMultiplier => lowJumpGravityMultiplier;    // -------- DON'T INCLUDE IN SHOP ------------- //
+    public float ProjectileSize => projectileSize;    // -------- DON'T INCLUDE IN SHOP ------------- //
+    public float ProjectileSpreadRadius => projectileSpreadRadius;    // -------- DON'T INCLUDE IN SHOP ------------- //
+    public float AirLinearDrag => airLinearDrag;     // -------- DON'T INCLUDE IN SHOP ------------- //
+
+
+
+
+    // -------------- Include in Shop -------------- //
+    public float MoveSpeed => moveSpeed; // min - 7.5; extreme cap - 100 ; Make Expensive
+    public float GroundAcceleration => groundAcceleration; // min - 40; extreme cap - 200; Make Expensive
+    public float AirAcceleration => airAcceleration; // min - 10; max - 150; Make Expensive
+    public float JumpImpulse => jumpImpulse; // min - 5; max - 15
+    public int MaxAirJumps => maxAirJumps; // min - 0; max - 10
+    public float FireRate => fireRate; // min - 0.5; max - 20
+    public float ProjectileDamage => projectileDamage; // min - 1; max - 1000
+    public float ProjectileSpeed => projectileSpeed; // min - 10; max - 100
+    public int ProjectilesPerShot => projectilesPerShot; // min - 1; max - 20
+    public float ProjectileAngleVariance => projectileAngleVariance; // min - 10; max - 0
+
+    public float ProjectileLife => projectileLife; // min - 2; max - 10; (potentially just keep it at 10)
+
 
     public void NotifyChanged()
     {
