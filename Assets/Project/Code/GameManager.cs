@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
     public PlayerUpgradeData upgradeData;
+    public TimelineTracker tracker;
 
     public static GameManager Instance
     {
