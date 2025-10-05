@@ -240,20 +240,6 @@ public class TimelineTracker : MonoBehaviour
     }
 
 
-
-
-    [System.Serializable]
-    private class SerializableProgress
-    {
-        public List<string> dialogueIds = new List<string>();
-        public SerializableProgress(HashSet<string> set)
-        {
-            dialogueIds.AddRange(set);
-        }
-    }
-
-
-
     private void ResetProgress()
     {
         completedEvents.Clear();
