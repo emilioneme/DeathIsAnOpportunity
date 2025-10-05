@@ -19,6 +19,7 @@ public class TimelineTracker : MonoBehaviour
         public string key;
         public bool value;
     }
+    [Serializable]
     public class SerializableUpgrade
     {
         public string key;
@@ -207,8 +208,22 @@ public class TimelineTracker : MonoBehaviour
         {
             completedEvents.Clear();
             eventFlags.Clear();
+            upgradeTracker.Clear();
             SaveProgress(Path.Combine(Application.dataPath, "../saveFile.json"));
             Debug.Log("[TimelineTracker] Progress reset.");
         }
-    #endif
+#endif
+
+#if UNITY_EDITOR
+    [ContextMenu("Add Progress")]
+    private void DebugAddProgress()
+    {
+        completedEvents.Clear();
+        eventFlags.Clear();
+        upgradeTracker.Add("test", 0.1f);
+        Debug.Log(this.HasUpgrade("test"));
+        SaveProgress(Path.Combine(Application.dataPath, "../saveFile.json"));
+        Debug.Log("[TimelineTracker] Progress Added.");
+    }
+#endif
 }
