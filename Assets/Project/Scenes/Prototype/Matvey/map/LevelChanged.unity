@@ -38510,13 +38510,31 @@ PrefabInstance:
     - {fileID: 2930326423845531109, guid: 031cf8b7052aff14daf575ab5fe76580, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5769128317685393318, guid: 031cf8b7052aff14daf575ab5fe76580, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8239445945318502433}
   m_SourcePrefab: {fileID: 100100000, guid: 031cf8b7052aff14daf575ab5fe76580, type: 3}
 --- !u!1 &8239445945318502422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5769128317685393318, guid: 031cf8b7052aff14daf575ab5fe76580, type: 3}
   m_PrefabInstance: {fileID: 8239445945318502421}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8239445945318502433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8239445945318502422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2905e7022657cd143bef7cf2ccf8b81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 8239445945318502422}
+  breadcrumbInterval: 0.5
+  maxBreadcrumbs: 500
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

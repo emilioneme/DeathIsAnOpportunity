@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 7480861149223873362}
   - component: {fileID: 9119103513103287990}
   - component: {fileID: 1194228917901957806}
+  - component: {fileID: 2232248604511747599}
   - component: {fileID: 878512431776797946}
-  - component: {fileID: 9169870891941123048}
+  - component: {fileID: -2493446750835871857}
   m_Layer: 0
   m_Name: Orbiter
   m_TagString: Untagged
@@ -182,6 +183,18 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6912966402700947078, guid: f29aa2e121deffb4abb1376408bffcb7, type: 3}
   fireRate: 2
   isFiring: 0
+--- !u!114 &2232248604511747599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391165922559026800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd59b78d1b754d94abbb01c7c2b7484f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &878512431776797946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   shooter: {fileID: 1194228917901957806}
---- !u!114 &9169870891941123048
+--- !u!114 &-2493446750835871857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,7 +218,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6391165922559026800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f47267f6be2ddb4e9317e77991f7c4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b1d94684e02be444bdcc9e065cc71d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnHeight: 2
+  spawnHeight: 0
+  targetRef: {fileID: 0}

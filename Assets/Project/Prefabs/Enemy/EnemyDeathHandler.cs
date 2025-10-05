@@ -9,16 +9,24 @@ public class EnemyDeathHandler : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("EnemyDeathHandler.Awake called", gameObject);
         health = GetComponent<Health>();
 
         if (health != null)
+        {
+            Debug.Log("Health component found", gameObject);
             health.OnDeath.AddListener(HandleDeath);
+            Debug.Log("Listener added to Health.OnDeath", gameObject);
+        }
         else
+        {
             Debug.LogWarning("No Health component found on enemy.", gameObject);
+        }
     }
 
     private void HandleDeath()
     {
+        Debug.Log("On Death Handled");
         OnAnyEnemyDied?.Invoke();
         StartCoroutine(DestroyAfterDelay(0.5f));
     }

@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     private bool clampOverheal = true;
 
     // Hidden: shown by the custom inspector as a bar + slider
-    [SerializeField, HideInInspector] private float currentHealth = 100f;
+    [SerializeField] private float currentHealth = 100f;
 
     public float MaxHealth
     {
@@ -35,15 +35,16 @@ public class Health : MonoBehaviour
     public bool Invulnerable { get => invulnerable; set => invulnerable = value; }
 
     [System.Serializable] public class HealthEvent : UnityEvent<float, float> { } // (current, max)
-    public HealthEvent OnHealthChanged;
-    public UnityEvent OnDamaged;
-    public UnityEvent OnHealed;
-    public UnityEvent OnDeath;
+    public HealthEvent OnHealthChanged = new HealthEvent();
+    public UnityEvent OnDamaged = new UnityEvent();
+    public UnityEvent OnHealed = new UnityEvent();
+    public UnityEvent OnDeath = new UnityEvent();
 
     private Coroutine dotRoutine;
 
     private void Awake()
     {
+
         if (startAtMax) currentHealth = maxHealth;
         else currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
 
@@ -76,9 +77,15 @@ public class Health : MonoBehaviour
         }
 
         if (currentHealth <= 0f)
+        {
+            Debug.Log($"OnDeath is {(OnDeath == null ? "null" : "not null")}, listeners: {(OnDeath != null ? OnDeath.GetPersistentEventCount() : 0)}", gameObject);
             OnDeath?.Invoke();
-            if(DeathParticles != null)
+            if (DeathParticles != null)
+            {
                 Destroy(Instantiate(DeathParticles, transform.position, Quaternion.identity), 3f);
+            }
+        }
+            
 
         return prev - currentHealth;
     }
