@@ -27,7 +27,7 @@ MonoBehaviour:
   fireRate: 0.5
   projectileSize: 0.70710677
   projectileDamage: 14.1
-  projectileSpeed: 73.5
+  projectileSpeed: 28.8
   projectileLife: 3.25
   projectilesPerShot: 2
   projectileSpreadRadius: 0.14142136
