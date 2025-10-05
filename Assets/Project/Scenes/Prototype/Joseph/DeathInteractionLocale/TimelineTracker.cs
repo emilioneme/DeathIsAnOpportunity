@@ -74,7 +74,6 @@ public class TimelineTracker : MonoBehaviour
 
             // for testing purposes; otherwise it will got to appdata locallow
             saveFilePath = Path.Combine(Application.dataPath, "../saveFile.json");
-            Debug.Log(Application.dataPath);
 
             // saveFilePath = Path.Combine(Application.persistentDataPath, "timeline_progress.json");
 
@@ -171,7 +170,7 @@ public class TimelineTracker : MonoBehaviour
             completedEvents = new List<string>(completedEvents),
             eventFlags = new List<SerializableFlag>(),
             upgradeTracker = new List<SerializableUpgrade>(),
-            playerUpgradeData = ConvertToSerializable(GameManager.Instance.upgradeData)
+            //playerUpgradeData = ConvertToSerializable(GameManager.Instance.upgradeData)
         };
 
         foreach (var flag in eventFlags)
@@ -227,11 +226,11 @@ public class TimelineTracker : MonoBehaviour
             }
 
 
-            if (data.playerUpgradeData != null)
-            {
-                ApplyToUpgradeData(GameManager.Instance.upgradeData, data.playerUpgradeData);
-            }
-            Debug.Log("Timeline progress loaded successfully.");
+            //if (data.playerUpgradeData != null)
+            //{
+            //    ApplyToUpgradeData(GameManager.Instance.upgradeData, data.playerUpgradeData);
+            //}
+            //Debug.Log("Timeline progress loaded successfully.");
         }
         catch (Exception ex)
         {
@@ -250,62 +249,34 @@ public class TimelineTracker : MonoBehaviour
     }
 
 
+    //private void ApplyToUpgradeData(PlayerUpgradeData target, SerializablePlayerUpgradeData saved)
+    //{
+    //    if (saved == null || target == null)
+    //        return;
 
-    private SerializablePlayerUpgradeData ConvertToSerializable(PlayerUpgradeData data)
-    {
-        return new SerializablePlayerUpgradeData
-        {
-            moveSpeed = data.moveSpeed,
-            maxHorizontalSpeed = data.maxHorizontalSpeed,
-            groundAcceleration = data.groundAcceleration,
-            airAcceleration = data.airAcceleration,
-            groundLinearDrag = data.groundLinearDrag,
-            airLinearDrag = data.airLinearDrag,
-            jumpImpulse = data.jumpImpulse,
-            maxAirJumps = data.maxAirJumps,
-            coyoteTime = data.coyoteTime,
-            jumpBuffer = data.jumpBuffer,
-            fallGravityMultiplier = data.fallGravityMultiplier,
-            lowJumpGravityMultiplier = data.lowJumpGravityMultiplier,
-            fireRate = data.fireRate,
-            projectileSize = data.projectileSize,
-            projectileDamage = data.projectileDamage,
-            projectileSpeed = data.projectileSpeed,
-            projectileLife = data.projectileLife,
-            projectilesPerShot = data.projectilesPerShot,
-            projectileSpreadRadius = data.projectileSpreadRadius,
-            projectileAngleVariance = data.projectileAngleVariance
-        };
-    }
+    //    target.moveSpeed = saved.moveSpeed;
+    //    target.maxHorizontalSpeed = saved.maxHorizontalSpeed;
+    //    target.groundAcceleration = saved.groundAcceleration;
+    //    target.airAcceleration = saved.airAcceleration;
+    //    target.groundLinearDrag = saved.groundLinearDrag;
+    //    target.airLinearDrag = saved.airLinearDrag;
+    //    target.jumpImpulse = saved.jumpImpulse;
+    //    target.maxAirJumps = saved.maxAirJumps;
+    //    target.coyoteTime = saved.coyoteTime;
+    //    target.jumpBuffer = saved.jumpBuffer;
+    //    target.fallGravityMultiplier = saved.fallGravityMultiplier;
+    //    target.lowJumpGravityMultiplier = saved.lowJumpGravityMultiplier;
+    //    target.fireRate = saved.fireRate;
+    //    target.projectileSize = saved.projectileSize;
+    //    target.projectileDamage = saved.projectileDamage;
+    //    target.projectileSpeed = saved.projectileSpeed;
+    //    target.projectileLife = saved.projectileLife;
+    //    target.projectilesPerShot = saved.projectilesPerShot;
+    //    target.projectileSpreadRadius = saved.projectileSpreadRadius;
+    //    target.projectileAngleVariance = saved.projectileAngleVariance;
 
-    private void ApplyToUpgradeData(PlayerUpgradeData target, SerializablePlayerUpgradeData saved)
-    {
-        if (saved == null || target == null)
-            return;
-
-        target.moveSpeed = saved.moveSpeed;
-        target.maxHorizontalSpeed = saved.maxHorizontalSpeed;
-        target.groundAcceleration = saved.groundAcceleration;
-        target.airAcceleration = saved.airAcceleration;
-        target.groundLinearDrag = saved.groundLinearDrag;
-        target.airLinearDrag = saved.airLinearDrag;
-        target.jumpImpulse = saved.jumpImpulse;
-        target.maxAirJumps = saved.maxAirJumps;
-        target.coyoteTime = saved.coyoteTime;
-        target.jumpBuffer = saved.jumpBuffer;
-        target.fallGravityMultiplier = saved.fallGravityMultiplier;
-        target.lowJumpGravityMultiplier = saved.lowJumpGravityMultiplier;
-        target.fireRate = saved.fireRate;
-        target.projectileSize = saved.projectileSize;
-        target.projectileDamage = saved.projectileDamage;
-        target.projectileSpeed = saved.projectileSpeed;
-        target.projectileLife = saved.projectileLife;
-        target.projectilesPerShot = saved.projectilesPerShot;
-        target.projectileSpreadRadius = saved.projectileSpreadRadius;
-        target.projectileAngleVariance = saved.projectileAngleVariance;
-
-        target.NotifyChanged();
-    }
+    //    target.NotifyChanged();
+    //}
 
 
 #if UNITY_EDITOR

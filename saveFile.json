@@ -1,7 +1,35 @@
 {
     "completedEvents": [
-        "Intro"
+        "Intro",
+        "Upgrade_airAcceleration_Level1"
     ],
     "eventFlags": [],
-    "upgradeTracker": []
+    "upgradeTracker": [
+        {
+            "key": "airAcceleration",
+            "fvalue": 1.0
+        }
+    ],
+    "playerUpgradeData": {
+        "moveSpeed": 0.0,
+        "maxHorizontalSpeed": 0.0,
+        "groundAcceleration": 0.0,
+        "airAcceleration": 0.0,
+        "groundLinearDrag": 0.0,
+        "airLinearDrag": 0.0,
+        "jumpImpulse": 0.0,
+        "maxAirJumps": 0,
+        "coyoteTime": 0.0,
+        "jumpBuffer": 0.0,
+        "fallGravityMultiplier": 0.0,
+        "lowJumpGravityMultiplier": 0.0,
+        "fireRate": 0.0,
+        "projectileSize": 0.0,
+        "projectileDamage": 0.0,
+        "projectileSpeed": 0.0,
+        "projectileLife": 0.0,
+        "projectilesPerShot": 0,
+        "projectileSpreadRadius": 0.0,
+        "projectileAngleVariance": 0.0
+    }
 }

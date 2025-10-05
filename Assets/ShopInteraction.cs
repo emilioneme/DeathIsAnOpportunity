@@ -61,59 +61,61 @@ public class ShopInteraction : MonoBehaviour, IInteractable
         }
     }
 
-    public void SelectUpgrade(int upgrade)
+    public void SelectUpgrade(string upgrade)
     {
         switch (upgrade)
         {
-            case 1:
+            case "moveSpeed":
                 if (upgradeData.moveSpeed < 100) 
                     upgradeData.moveSpeed += 18.6f;
                 break;
 
-            case 2:
+            case "groundAccel":
                 if (upgradeData.groundAcceleration < 200) 
                     upgradeData.groundAcceleration += 32;
                 break;
 
-            case 3:
+            case "airAccel":
                 if (upgradeData.airAcceleration < 150) 
                     upgradeData.airAcceleration += 28;
                 break;
 
-            case 4:
+            case "jumpImpulse":
                 if (upgradeData.jumpImpulse < 15) 
                     upgradeData.jumpImpulse += 2;
                 break;
 
-            case 5:
+            case "maxAirJumps":
                 if (upgradeData.maxAirJumps < 10) 
                     upgradeData.maxAirJumps += 1;
                 break;
-            case 6:
+            case "fireRate":
                 if (upgradeData.fireRate < 20f)
                     upgradeData.fireRate += 3.6f;
                 break;
 
-            case 7:
+            case "projectileSpeed":
                 if (upgradeData.projectileSpeed < 100f)
                     upgradeData.projectileSpeed += 16f;
                 break;
 
-            case 8:
+            case "projectileDamage":
                 if (upgradeData.projectileDamage < 1000f)
                     upgradeData.projectileDamage += 198f;
                 break;
 
-            case 9:
+            case "projectilesPerShot":
                 if (upgradeData.projectilesPerShot < 20)
                     upgradeData.projectilesPerShot += 4;
                 break;
 
-            case 10:
+            case "projectileAngleVariance":
                 if (upgradeData.projectileAngleVariance < 10f)
                     upgradeData.projectileAngleVariance += 1f;
                 break;
         }
+
+        Debug.Log(upgrade);
         upgradeData.NotifyChanged();
     }
 }
