@@ -5,7 +5,7 @@ public class graveContinue : MonoBehaviour, IInteractable
     [SerializeField] GameObject open;
     [SerializeField] private PlayerMovementRB playerMovement;
     [SerializeField] private PlayerCameraLook playerCameraLook;
-
+    [SerializeField] private PlayerUI playerUI;
     public void Interact()
     {
         playerMovement.CanMove = false;
@@ -19,6 +19,7 @@ public class graveContinue : MonoBehaviour, IInteractable
     {
         playerMovement.CanMove = true;
         playerCameraLook.SetCursorLock(true);
+        playerUI.interacted = false;
 
         Time.timeScale = 1f;
         open.SetActive(false);

@@ -11,6 +11,7 @@ public class ShopInteraction : MonoBehaviour, IInteractable
     [SerializeField] private GameObject shopUI;                 // The UI Panel (Canvas child)
     [SerializeField] private PlayerMovementRB playerMovement;   // Player movement controller
     [SerializeField] private PlayerCameraLook playerCameraLook; // Camera look controller
+    [SerializeField] private PlayerUI playerUI;
 
     private bool isShopOpen = false;
     private PlayerUpgradeData upgradeData;
@@ -42,6 +43,7 @@ public class ShopInteraction : MonoBehaviour, IInteractable
 
     public void CloseShop()
     {
+        playerUI.interacted = false;
         shopUI.SetActive(false);
         isShopOpen = false;
 

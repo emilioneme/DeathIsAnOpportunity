@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public PlayerUpgradeData upgradeData;
     public TimelineTracker tracker;
+    public int soulCount;
 
     public static GameManager Instance
     {
