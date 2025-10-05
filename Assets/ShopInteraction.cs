@@ -54,4 +54,19 @@ public class ShopInteraction : MonoBehaviour, IInteractable
             CloseShop();
         }
     }
+
+    public void SelectUpgrade(PlayerUpgradeData data)
+    {
+        Debug.Log($"Selected upgrade: {data.name}");
+
+        // Apply upgrade to GameManager
+        GameManager.Instance.upgradeData = data;
+
+        // Optional: notify TimelineTracker for persistence
+        TimelineTracker.Instance.SetUpgrade(data.name, 1f); // value can be anything you like
+
+        // Optionally close shop after selection
+        CloseShop();
+    }
+
 }
