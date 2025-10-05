@@ -13,6 +13,8 @@ public class TimelineTracker : MonoBehaviour
     private Dictionary<string, float> upgradeTracker = new Dictionary<string, float>();
     private string saveFilePath;
 
+
+
     [Serializable]
     public class SerializableFlag
     {
@@ -26,12 +28,41 @@ public class TimelineTracker : MonoBehaviour
         public float fvalue;
     }
     [Serializable]
+    public class SerializablePlayerUpgradeData
+    {
+        public float moveSpeed;
+        public float maxHorizontalSpeed;
+        public float groundAcceleration;
+        public float airAcceleration;
+        public float groundLinearDrag;
+        public float airLinearDrag;
+        public float jumpImpulse;
+        public int maxAirJumps;
+        public float coyoteTime;
+        public float jumpBuffer;
+        public float fallGravityMultiplier;
+        public float lowJumpGravityMultiplier;
+        public float fireRate;
+        public float projectileSize;
+        public float projectileDamage;
+        public float projectileSpeed;
+        public float projectileLife;
+        public int projectilesPerShot;
+        public float projectileSpreadRadius;
+        public float projectileAngleVariance;
+    }
+
+
+
+    [Serializable]
     private class SaveData
     {
         public List<string> completedEvents;
         public List<SerializableFlag> eventFlags;
         public List<SerializableUpgrade> upgradeTracker;
+        public SerializablePlayerUpgradeData playerUpgradeData;
     }
+
 
 
     private void Awake()
@@ -55,6 +86,9 @@ public class TimelineTracker : MonoBehaviour
         }
     }
 
+
+
+
     // completedEvents checks
     public bool IsEventCompleted(string eventId) => completedEvents.Contains(eventId);
     public void MarkEventCompleted(string eventId)
@@ -66,6 +100,10 @@ public class TimelineTracker : MonoBehaviour
             SaveProgress(saveFilePath);
         }
     }
+
+
+
+
 
     // eventFlags checks and implementation
     public bool HasFlag(string eventId) => eventFlags.ContainsKey(eventId);
@@ -90,6 +128,11 @@ public class TimelineTracker : MonoBehaviour
             eventFlags.Add(eventName, value); // add new
         }
     }
+
+
+
+
+
 
     // upgradeTracker checks and implementation
     public bool HasUpgrade(string eventId) => upgradeTracker.ContainsKey(eventId);
@@ -117,13 +160,18 @@ public class TimelineTracker : MonoBehaviour
 
     public List<string> GetAllCompletedEvents() => new List<string>(completedEvents);
 
+
+
+
+
     private void SaveProgress(string saveFilePath)
     {
         var data = new SaveData
         {
             completedEvents = new List<string>(completedEvents),
             eventFlags = new List<SerializableFlag>(),
-            upgradeTracker = new List<SerializableUpgrade>()
+            upgradeTracker = new List<SerializableUpgrade>(),
+            playerUpgradeData = ConvertToSerializable(GameManager.Instance.upgradeData)
         };
 
         foreach (var flag in eventFlags)
@@ -140,6 +188,9 @@ public class TimelineTracker : MonoBehaviour
         File.WriteAllText(saveFilePath, json);
         Debug.Log($"Progress saved to: {saveFilePath}");
     }
+
+
+
 
     private void LoadProgress()
     {
@@ -175,6 +226,11 @@ public class TimelineTracker : MonoBehaviour
                 }
             }
 
+
+            if (data.playerUpgradeData != null)
+            {
+                ApplyToUpgradeData(GameManager.Instance.upgradeData, data.playerUpgradeData);
+            }
             Debug.Log("Timeline progress loaded successfully.");
         }
         catch (Exception ex)
@@ -182,6 +238,9 @@ public class TimelineTracker : MonoBehaviour
             Debug.LogError($"Failed to load timeline progress: {ex.Message}");
         }
     }
+
+
+
 
     [System.Serializable]
     private class SerializableProgress
@@ -193,6 +252,8 @@ public class TimelineTracker : MonoBehaviour
         }
     }
 
+
+
     private void ResetProgress()
     {
         completedEvents.Clear();
@@ -201,6 +262,65 @@ public class TimelineTracker : MonoBehaviour
         SaveProgress(Path.Combine(saveFilePath, "../saveFile.json"));
         Debug.Log("[TimelineTracker] Progress reset.");
     }
+
+
+
+    private SerializablePlayerUpgradeData ConvertToSerializable(PlayerUpgradeData data)
+    {
+        return new SerializablePlayerUpgradeData
+        {
+            moveSpeed = data.moveSpeed,
+            maxHorizontalSpeed = data.maxHorizontalSpeed,
+            groundAcceleration = data.groundAcceleration,
+            airAcceleration = data.airAcceleration,
+            groundLinearDrag = data.groundLinearDrag,
+            airLinearDrag = data.airLinearDrag,
+            jumpImpulse = data.jumpImpulse,
+            maxAirJumps = data.maxAirJumps,
+            coyoteTime = data.coyoteTime,
+            jumpBuffer = data.jumpBuffer,
+            fallGravityMultiplier = data.fallGravityMultiplier,
+            lowJumpGravityMultiplier = data.lowJumpGravityMultiplier,
+            fireRate = data.fireRate,
+            projectileSize = data.projectileSize,
+            projectileDamage = data.projectileDamage,
+            projectileSpeed = data.projectileSpeed,
+            projectileLife = data.projectileLife,
+            projectilesPerShot = data.projectilesPerShot,
+            projectileSpreadRadius = data.projectileSpreadRadius,
+            projectileAngleVariance = data.projectileAngleVariance
+        };
+    }
+
+    private void ApplyToUpgradeData(PlayerUpgradeData target, SerializablePlayerUpgradeData saved)
+    {
+        if (saved == null || target == null)
+            return;
+
+        target.moveSpeed = saved.moveSpeed;
+        target.maxHorizontalSpeed = saved.maxHorizontalSpeed;
+        target.groundAcceleration = saved.groundAcceleration;
+        target.airAcceleration = saved.airAcceleration;
+        target.groundLinearDrag = saved.groundLinearDrag;
+        target.airLinearDrag = saved.airLinearDrag;
+        target.jumpImpulse = saved.jumpImpulse;
+        target.maxAirJumps = saved.maxAirJumps;
+        target.coyoteTime = saved.coyoteTime;
+        target.jumpBuffer = saved.jumpBuffer;
+        target.fallGravityMultiplier = saved.fallGravityMultiplier;
+        target.lowJumpGravityMultiplier = saved.lowJumpGravityMultiplier;
+        target.fireRate = saved.fireRate;
+        target.projectileSize = saved.projectileSize;
+        target.projectileDamage = saved.projectileDamage;
+        target.projectileSpeed = saved.projectileSpeed;
+        target.projectileLife = saved.projectileLife;
+        target.projectilesPerShot = saved.projectilesPerShot;
+        target.projectileSpreadRadius = saved.projectileSpreadRadius;
+        target.projectileAngleVariance = saved.projectileAngleVariance;
+
+        target.NotifyChanged();
+    }
+
 
 #if UNITY_EDITOR
     [ContextMenu("Reset Progress")]
@@ -212,18 +332,5 @@ public class TimelineTracker : MonoBehaviour
             SaveProgress(Path.Combine(Application.dataPath, "../saveFile.json"));
             Debug.Log("[TimelineTracker] Progress reset.");
         }
-#endif
-
-#if UNITY_EDITOR
-    [ContextMenu("Add Progress")]
-    private void DebugAddProgress()
-    {
-        completedEvents.Clear();
-        eventFlags.Clear();
-        upgradeTracker.Add("test", 0.1f);
-        Debug.Log(this.HasUpgrade("test"));
-        SaveProgress(Path.Combine(Application.dataPath, "../saveFile.json"));
-        Debug.Log("[TimelineTracker] Progress Added.");
-    }
 #endif
 }
