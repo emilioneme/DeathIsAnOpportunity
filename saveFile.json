@@ -1,5 +1,7 @@
 {
-    "completedEvents": [],
+    "completedEvents": [
+        "Intro"
+    ],
     "eventFlags": [],
     "upgradeTracker": []
 }
