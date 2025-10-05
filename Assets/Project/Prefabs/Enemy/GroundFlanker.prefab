@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 9154913631998076399}
   - component: {fileID: 6606941273662748927}
   - component: {fileID: 4887310025107985212}
+  - component: {fileID: 2484391598253632707}
   m_Layer: 6
   m_Name: GroundFlanker
   m_TagString: Untagged
@@ -263,3 +264,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnHeight: 0
   targetRef: {fileID: 0}
+--- !u!114 &2484391598253632707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986200041838550085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38a189c568be544cb36b737671fb93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 2159273602951971027, guid: b0f90d58480e72340af8f8c7383f4fa6, type: 3}
+  damageEffect: {fileID: 6952560664003574418, guid: c6613486a4aadd843811ba805083a45e, type: 3}

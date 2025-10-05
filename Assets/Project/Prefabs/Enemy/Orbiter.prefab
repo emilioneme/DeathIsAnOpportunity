@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2232248604511747599}
   - component: {fileID: 878512431776797946}
   - component: {fileID: -2493446750835871857}
+  - component: {fileID: -1019112991080299336}
   m_Layer: 0
   m_Name: Orbiter
   m_TagString: Untagged
@@ -223,3 +224,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnHeight: 0
   targetRef: {fileID: 0}
+--- !u!114 &-1019112991080299336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391165922559026800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38a189c568be544cb36b737671fb93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 2159273602951971027, guid: b0f90d58480e72340af8f8c7383f4fa6, type: 3}
+  damageEffect: {fileID: 6952560664003574418, guid: c6613486a4aadd843811ba805083a45e, type: 3}
