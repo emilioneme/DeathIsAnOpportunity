@@ -79,7 +79,7 @@ public class PlayerInputHub : MonoBehaviour
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
                 {
-                    Debug.Log("Interaction noted");
+                    //Debug.Log("Interaction noted");
                     interactable.Interact();
                 }
             }
