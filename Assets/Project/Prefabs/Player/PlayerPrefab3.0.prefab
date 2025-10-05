@@ -679,7 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38a189c568be544cb36b737671fb93c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 6952560664003574418, guid: c6613486a4aadd843811ba805083a45e, type: 3}
   damageEffect: {fileID: 7112509057590789649, guid: af05fc32a76a784418e72e9769221c08, type: 3}
 --- !u!1 &6430969058671658156
 GameObject:
