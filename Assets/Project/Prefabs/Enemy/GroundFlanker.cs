@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class GroundFlanker_Behaviour : MonoBehaviour
 {
-    public Transform target;
+    [SerializeField] private GameObject target;
 
     [Header("Spiral Settings")]
     public float spiralStrength = 5f; // Controls curve radius
@@ -14,18 +15,39 @@ public class GroundFlanker_Behaviour : MonoBehaviour
     private NavMeshAgent agent;
     private float angle; // No longer randomized
     private bool spiraling = true;
+    private EnemySpawnInfo spawnInfo;
+    private EnemyAttack attack;
+
+
+    void Awake()
+    {
+        spawnInfo = GetComponent<EnemySpawnInfo>();
+        attack = GetComponent<EnemyAttack>();
+    }
+
+    IEnumerator Setup()
+    {
+        // Wait until targetRef is assigned (or just one frame)
+        yield return new WaitUntil(() => spawnInfo.targetRef != null);
+
+        target = spawnInfo.targetRef;
+        attack.target = spawnInfo.targetRef;
+
+    }
 
     void Start()
     {
+
         agent = GetComponent<NavMeshAgent>();
         angle = 0f; // Start angle at 0 for consistent behavior
+        StartCoroutine(Setup());
     }
 
     void Update()
     {
         if (target == null) return;
 
-        Vector3 toTarget = target.position - transform.position;
+        Vector3 toTarget = target.transform.position - transform.position;
         float distance = toTarget.magnitude;
 
         // Toggle spiral mode based on distance
@@ -61,11 +83,11 @@ public class GroundFlanker_Behaviour : MonoBehaviour
             Vector3 offset = circularOffset * spiralStrength;
 
             // Target a point offset from the direct path
-            destination = target.position - direction * distance * 0.5f + offset;
+            destination = target.transform.position - direction * distance * 0.5f + offset;
         }
         else
         {
-            destination = target.position;
+            destination = target.transform.position;
         }
 
         agent.SetDestination(destination);

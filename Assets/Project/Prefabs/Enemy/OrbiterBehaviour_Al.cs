@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class OrbiterBehaviour_Al : MonoBehaviour
 {
@@ -21,15 +22,35 @@ public class OrbiterBehaviour_Al : MonoBehaviour
     private int direction = 1;
     private Vector3 orbitDirection = Vector3.up;
     private bool orbitLock = false;
+    private EnemySpawnInfo spawnInfo;
+    private EnemyAttack attack;
+
+    void Awake()
+    {
+        spawnInfo = GetComponent<EnemySpawnInfo>();
+        attack = GetComponent<EnemyAttack>();
+    }
+
+    IEnumerator Setup()
+    {
+        // Wait until targetRef is assigned (or just one frame)
+        yield return new WaitUntil(() => spawnInfo.targetRef != null);
+
+        target = spawnInfo.targetRef;
+        attack.target = spawnInfo.targetRef;
+
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        StartCoroutine(Setup());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (target == null) return;
         if(health.IsDead) gameObject.SetActive(false);
         if (gameObject.HasLineOfSight(target, orbitLOS))
         {

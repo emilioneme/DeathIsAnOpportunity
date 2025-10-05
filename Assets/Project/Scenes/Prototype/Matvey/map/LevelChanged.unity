@@ -1367,6 +1367,10 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 30880b25fc8627d449b1621e75097a63, type: 2}
   timeBetweenWaves: 5
+  playerRef: {fileID: 550551567}
+  chaserConfig: {fileID: 11400000, guid: f6fccf110f23b894383f290647b04de9, type: 2}
+  orbiterConfig: {fileID: 11400000, guid: 2393784925edcb44dac8fe765e3dd61b, type: 2}
+  flankerConfig: {fileID: 11400000, guid: bf6415f9d33690e4a87e587688de0595, type: 2}
 --- !u!4 &469249373
 Transform:
   m_ObjectHideFlags: 0

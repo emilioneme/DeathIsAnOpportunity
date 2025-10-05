@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyConfig : ScriptableObject
 {
     public GameObject enemyPrefab;   // Enemy prefab to spawn
-    public int count = 1;            // How many of this enemy in the wave
+    public int initSpawnCount = 1;            // How many of this enemy in the wave
     public float spawnInterval = 0.5f; // Time between spawns of this enemy type
 }
 

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5530099615e1cc043865571c2e684ae6, type: 3}
-  m_Name: EnemyChaser
+  m_Name: EnemyFlanker
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6041284357882017041, guid: e8d47651d74e0fd4fb264afa77faddd9, type: 3}
-  initSpawnCount: 2
-  spawnInterval: 1
+  enemyPrefab: {fileID: 2986200041838550085, guid: 897c28a7c70124f4e84734fc4868ea84, type: 3}
+  initSpawnCount: 3
+  spawnInterval: 0.5
