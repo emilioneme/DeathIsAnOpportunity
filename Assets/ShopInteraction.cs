@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShopInteraction : MonoBehaviour, IInteractable
 {
-    public GameManager GameManager;
+    [SerializeField] private GameManager GameManager;
 
     [Header("References")]
     [SerializeField] private GameObject shopUI;                 // The UI Panel (Canvas child)
@@ -17,7 +17,6 @@ public class ShopInteraction : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        GameManager = GetComponent<GameManager>();
         upgradeData = GameManager.upgradeData;
     }
     public void Interact()
@@ -62,55 +61,55 @@ public class ShopInteraction : MonoBehaviour, IInteractable
         }
     }
 
-    public void SelectUpgrade(string upgrade)
+    public void SelectUpgrade(int upgrade)
     {
         switch (upgrade)
         {
-            case "moveSpeed":
+            case 1:
                 if (upgradeData.moveSpeed < 100) 
                     upgradeData.moveSpeed += 18.6f;
                 break;
 
-            case "groundAcceleration":
+            case 2:
                 if (upgradeData.groundAcceleration < 200) 
                     upgradeData.groundAcceleration += 32;
                 break;
 
-            case "airAcceleration":
+            case 3:
                 if (upgradeData.airAcceleration < 150) 
                     upgradeData.airAcceleration += 28;
                 break;
 
-            case "jumpImpulse":
+            case 4:
                 if (upgradeData.jumpImpulse < 15) 
                     upgradeData.jumpImpulse += 2;
                 break;
 
-            case "maxAirJumps":
+            case 5:
                 if (upgradeData.maxAirJumps < 10) 
                     upgradeData.maxAirJumps += 1;
                 break;
-            case "fireRate":
+            case 6:
                 if (upgradeData.fireRate < 20f)
                     upgradeData.fireRate += 3.6f;
                 break;
 
-            case "projectileSpeed":
+            case 7:
                 if (upgradeData.projectileSpeed < 100f)
                     upgradeData.projectileSpeed += 16f;
                 break;
 
-            case "projectileDamage":
+            case 8:
                 if (upgradeData.projectileDamage < 1000f)
                     upgradeData.projectileDamage += 198f;
                 break;
 
-            case "projectilesPerShot":
+            case 9:
                 if (upgradeData.projectilesPerShot < 20)
                     upgradeData.projectilesPerShot += 4;
                 break;
 
-            case "projectileAngleVariance":
+            case 10:
                 if (upgradeData.projectileAngleVariance < 10f)
                     upgradeData.projectileAngleVariance += 1f;
                 break;

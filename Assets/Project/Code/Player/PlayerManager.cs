@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovementRB))]
 public class PlayerManager : MonoBehaviour
 {
-    public GameManager GameManager;
+    [SerializeField] public GameManager GameManager;
 
     [Header("Data")]
     [SerializeField] private PlayerUpgradeData upgradeData;
@@ -18,7 +18,6 @@ public class PlayerManager : MonoBehaviour
 
     void Awake()
     {
-        GameManager = GetComponent<GameManager>();
         upgradeData = GameManager.upgradeData;
         ApplyUpgradeData(upgradeData);
         CacheComponents();
