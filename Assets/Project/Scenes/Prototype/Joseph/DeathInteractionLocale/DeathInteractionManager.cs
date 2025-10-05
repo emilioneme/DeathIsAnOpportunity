@@ -10,7 +10,7 @@ public class DeathInteractionManager : MonoBehaviour, IInteractable
     private TimelineTracker tracker;
     private DialogueManager manager;
 
-    private void Start()
+    private void Awake()
     {
         tracker = TimelineTracker.Instance;
         manager = DialogueManager.Instance;

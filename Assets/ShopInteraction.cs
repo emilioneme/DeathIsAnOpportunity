@@ -38,7 +38,6 @@ public class ShopInteraction : MonoBehaviour, IInteractable
         playerMovement.CanMove = false;
         playerCameraLook.SetCursorLock(false);
 
-        Time.timeScale = 0f;
     }
 
     public void CloseShop()
@@ -51,7 +50,6 @@ public class ShopInteraction : MonoBehaviour, IInteractable
         playerMovement.CanMove = true;
         playerCameraLook.SetCursorLock(true);
 
-        Time.timeScale = 1f;
     }
 
     private void Update()

@@ -11,7 +11,7 @@ public class graveContinue : MonoBehaviour, IInteractable
         playerMovement.CanMove = false;
         playerCameraLook.SetCursorLock(false);
 
-        Time.timeScale = 0f;
+
         open.SetActive(true);
     }
 
@@ -21,12 +21,11 @@ public class graveContinue : MonoBehaviour, IInteractable
         playerCameraLook.SetCursorLock(true);
         playerUI.interacted = false;
 
-        Time.timeScale = 1f;
         open.SetActive(false);
     }
     public void LoadScene()
     {
-        GetComponent<SceneManagerFade>().LoadScene("LevelChanged");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelChanged");
         Debug.Log("GraveContinue");
     }
 }

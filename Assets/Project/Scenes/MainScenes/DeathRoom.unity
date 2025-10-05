@@ -2297,7 +2297,7 @@ MonoBehaviour:
   playerMovement: {fileID: 3133187459168848022}
   playerCameraLook: {fileID: 6205803599944181581}
   playerUI: {fileID: 6559037122938469867}
---- !u!114 &866400332
+--- !u!114 &866400337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2306,11 +2306,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 866400326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce01a62fda1b3ea40a83c853c169700f, type: 3}
+  m_Script: {fileID: 11500000, guid: af995f690ddc67d409336312bb4010d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeCanvasGroup: {fileID: 0}
-  fadeDuration: 1
 --- !u!1001 &884384230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4042,7 +4040,7 @@ PrefabInstance:
       addedObject: {fileID: 866400327}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3650d5cd0bc3c406bb0563ac717c38d3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 866400332}
+      addedObject: {fileID: 866400337}
   m_SourcePrefab: {fileID: 100100000, guid: 3650d5cd0bc3c406bb0563ac717c38d3, type: 3}
 --- !u!1 &1602372138
 GameObject:
