@@ -24,7 +24,13 @@ public class PlayerInputHub : MonoBehaviour
     public event System.Action OnAttackPressed;
     public event System.Action OnInteractPressed;
 
+    public event System.Action OnFingerPressed;
+
     // --- Input System callbacks ---
+    public void OnFinger(InputAction.CallbackContext ctx)
+    {
+        if(ctx.performed) OnFingerPressed?.Invoke();   
+    }
     public void OnMove(InputAction.CallbackContext ctx) 
         => Move = ctx.ReadValue<Vector2>();
 

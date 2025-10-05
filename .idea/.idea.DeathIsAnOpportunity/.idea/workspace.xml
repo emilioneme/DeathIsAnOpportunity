@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="772a308a-4188-4d98-b18e-efd52d6c9cd8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DeathIsAnOpportunity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DeathIsAnOpportunity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Code/Player/PlayerInputHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Code/Player/PlayerInputHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Code/Player/PlayerShooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Code/Player/PlayerShooter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/HoverHand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/HoverHand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/map/LevelChanged.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/map/LevelChanged.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveFile.json" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/skelehandController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Prototype/Matvey/skelehandController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/ScriptableObjects/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/ScriptableObjects/InputSystem_Actions.inputactions" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

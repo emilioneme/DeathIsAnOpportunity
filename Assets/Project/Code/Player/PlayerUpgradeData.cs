@@ -37,7 +37,6 @@ public class PlayerUpgradeData : ScriptableObject
     [SerializeField] private float projectileSize = 1f;
     [SerializeField] private float projectileDamage = 10f;
     [SerializeField] private float projectileSpeed = 20f;
-    [SerializeField] private ProjectilePathType projectilePath = ProjectilePathType.Normal;
     [SerializeField] private float projectileLife = 3f;
     [SerializeField] private int projectilesPerShot = 1;
     [SerializeField] private float projectileSpreadRadius = 0.5f;
@@ -59,7 +58,6 @@ public class PlayerUpgradeData : ScriptableObject
     public float ProjectileSize => projectileSize;
     public float ProjectileDamage => projectileDamage;
     public float ProjectileSpeed => projectileSpeed;
-    public ProjectilePathType ProjectilePath => projectilePath;
     public float ProjectileLife => projectileLife;
     public int ProjectilesPerShot => projectilesPerShot;
     public float ProjectileSpreadRadius => projectileSpreadRadius;

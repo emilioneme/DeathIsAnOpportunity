@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - PlayerProjectile
+  - HandCam
   layers:
   - Default
   - TransparentFX
@@ -14,8 +14,7 @@ TagManager:
   - UI
   - Enemy
   - PlayerBody
-  - 
-  - 
+  - PlayerHand
   - 
   - 
   - 

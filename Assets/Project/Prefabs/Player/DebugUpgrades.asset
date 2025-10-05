@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa46159313ec3e749847c21c1a3c90f1, type: 3}
   m_Name: DebugUpgrades
   m_EditorClassIdentifier: 
-  moveSpeed: 50
-  maxHorizontalSpeed: 75
-  groundAcceleration: 100
-  airAcceleration: 100
+  moveSpeed: 20.5
+  maxHorizontalSpeed: 30.75
+  groundAcceleration: 64.2
+  airAcceleration: 28.9
   groundLinearDrag: 1
   airLinearDrag: 0.5
   jumpImpulse: 6.18
@@ -24,12 +24,12 @@ MonoBehaviour:
   jumpBuffer: 0.1
   fallGravityMultiplier: 2
   lowJumpGravityMultiplier: 2.5
-  fireRate: 0.5
-  projectileSize: 1
-  projectileDamage: 1
-  projectileSpeed: 10
+  fireRate: 20
+  projectileSize: 0.4472136
+  projectileDamage: 24.8
+  projectileSpeed: 17
   projectilePath: 0
-  projectileLife: 2
-  projectilesPerShot: 1
-  projectileSpreadRadius: 0.1
-  projectileAngleVariance: 10
+  projectileLife: 2.95
+  projectilesPerShot: 5
+  projectileSpreadRadius: 0.22360681
+  projectileAngleVariance: 8.35
