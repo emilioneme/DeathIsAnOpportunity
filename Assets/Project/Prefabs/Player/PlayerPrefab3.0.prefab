@@ -523,10 +523,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 0}
-  upgradeData: {fileID: 11400000, guid: c012a911b3fca944ea729ff74fd82f1a, type: 2}
+  upgradeData: {fileID: 11400000, guid: 0d1398e837ee76b489c839137ee118b7, type: 2}
   movement: {fileID: 3133187459844631211}
   shooter: {fileID: 4957755435589929446}
-  health: {fileID: 0}
+  health: {fileID: 2032224988920597577}
 --- !u!114 &6205803600343188848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,14 +565,14 @@ MonoBehaviour:
   inputHub: {fileID: 6634325005846317162}
   orientation: {fileID: 5282253186749535126}
   rb: {fileID: 5017436249742649706}
-  moveSpeed: 20.5
-  maxHorizontalSpeed: 30.75
-  groundAcceleration: 64.2
-  airAcceleration: 28.9
+  moveSpeed: 7.5
+  maxHorizontalSpeed: 11.25
+  groundAcceleration: 40
+  airAcceleration: 10
   groundLinearDrag: 1
   airLinearDrag: 0.5
-  jumpImpulse: 6.18
-  maxAirJumps: 3
+  jumpImpulse: 5
+  maxAirJumps: 0
   coyoteTime: 0.1
   jumpBuffer: 0.1
   fallGravityMultiplier: 2
@@ -613,14 +613,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5769128317685393318}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48b08c72a08c4e146aa4bbea45c549fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectileShooter: {fileID: 4957755435589929446}
   playerInputHub: {fileID: 6634325005846317162}
-  animator: {fileID: 0}
+  animator: {fileID: 9054984241020914069}
 --- !u!114 &4957755435589929446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzle: {fileID: 1165640303444349822}
   projectilePrefab: {fileID: 6912966402700947078, guid: f29aa2e121deffb4abb1376408bffcb7, type: 3}
-  fireRate: 20
+  fireRate: 0.5
   isFiring: 0
 --- !u!114 &803524155214033288
 MonoBehaviour:
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3049242e2919dad4d8cee2b5f6894949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
+  health: {fileID: 2032224988920597577}
   sceneManager: {fileID: 0}
 --- !u!1 &6430969058671658156
 GameObject:

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa46159313ec3e749847c21c1a3c90f1, type: 3}
+  m_Name: ChaserData
+  m_EditorClassIdentifier: 
+  moveSpeed: 7
+  maxHorizontalSpeed: 10.5
+  groundAcceleration: 40
+  airAcceleration: 15
+  groundLinearDrag: 6
+  airLinearDrag: 0.5
+  jumpImpulse: 7.5
+  maxAirJumps: 1
+  coyoteTime: 0.12
+  jumpBuffer: 0.12
+  fallGravityMultiplier: 2
+  lowJumpGravityMultiplier: 2.5
+  fireRate: 7.5
+  projectileSize: 0.70710677
+  projectileDamage: 27.1
+  projectileSpeed: 10
+  projectileLife: 3.25
+  projectilesPerShot: 2
+  projectileSpreadRadius: 0.14142136
+  projectileAngleVariance: 5

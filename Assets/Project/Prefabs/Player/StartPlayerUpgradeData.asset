@@ -22,13 +22,12 @@ MonoBehaviour:
   maxAirJumps: 0
   coyoteTime: 0.1
   jumpBuffer: 0.1
-  fallGravityMultiplier: 10
-  lowJumpGravityMultiplier: 15
+  fallGravityMultiplier: 2
+  lowJumpGravityMultiplier: 2.5
   fireRate: 0.5
   projectileSize: 1
   projectileDamage: 1
   projectileSpeed: 10
-  projectilePath: 0
   projectileLife: 2
   projectilesPerShot: 1
   projectileSpreadRadius: 0.1

@@ -73,7 +73,7 @@ public class Projectile : MonoBehaviour
             return;
         if (owner != other.gameObject && other.TryGetComponent(out Health health))
         {
-            health.TakeDamage(damage);
+            //health.TakeDamage(damage);
         }
 
         if (owner && other.transform.root == owner.transform)

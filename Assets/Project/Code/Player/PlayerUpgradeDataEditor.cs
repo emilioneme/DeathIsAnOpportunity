@@ -131,8 +131,8 @@ public class PlayerUpgradeDataEditor : Editor
             EditorGUILayout.IntSlider(maxAirJumpsProp, 0, 3, Styles.MaxAirJumps);
             //EditorGUILayout.Slider(coyoteTimeProp, .1f, 0.1f, Styles.CoyoteTime);
             //EditorGUILayout.Slider(jumpBufferProp, .1f, 0.1f, Styles.JumpBuffer);
-            EditorGUILayout.Slider(fallGravityMultiplierProp, 2.0f, 10f, Styles.FallGravityMultiplier);
-            EditorGUILayout.Slider(lowJumpGravityMultiplierProp, 2.5f, 15f, Styles.LowJumpGravityMultiplier);
+            EditorGUILayout.Slider(fallGravityMultiplierProp, 2.0f, 2f, Styles.FallGravityMultiplier);
+            EditorGUILayout.Slider(lowJumpGravityMultiplierProp, 2.5f, 2.5f, Styles.LowJumpGravityMultiplier);
         }
     }
 
