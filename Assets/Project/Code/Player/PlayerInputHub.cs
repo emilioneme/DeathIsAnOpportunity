@@ -69,6 +69,7 @@ public class PlayerInputHub : MonoBehaviour
     {
         if (ctx.performed)
         {
+            PlayerUI playerUI = GetComponent<PlayerUI>();
             InteractPressed = true;
             // OnInteractPressed?.Invoke();
             
@@ -79,6 +80,7 @@ public class PlayerInputHub : MonoBehaviour
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
                 {
+                    playerUI.interacted = true;
                     //Debug.Log("Interaction noted");
                     interactable.Interact();
                 }

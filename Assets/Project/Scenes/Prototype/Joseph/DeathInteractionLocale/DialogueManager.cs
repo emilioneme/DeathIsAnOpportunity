@@ -8,13 +8,14 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
 
     [Header("UI Elements")]
+    public PlayerUI playerUI;
     public GameObject dialoguePanel;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
     private AudioSource voiceSource;
     private AudioSource prevVoice;
-
+    
     [SerializeField]
     private PlayerMovementRB playerMovement;
     [SerializeField]
@@ -23,8 +24,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        //if (Instance == null) Instance = this;
+        //else Destroy(gameObject);
 
         dialoguePanel.SetActive(false);
     }
@@ -100,5 +101,6 @@ public class DialogueManager : MonoBehaviour
         nameText.text = "";
         dialogueText.text = "";
         IsDialoguePlaying = false;
+        playerUI.interacted = false;
     }
 }

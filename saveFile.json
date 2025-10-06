@@ -1,15 +1,7 @@
 {
-    "completedEvents": [
-        "Intro",
-        "Upgrade_airAcceleration_Level1"
-    ],
+    "completedEvents": [],
     "eventFlags": [],
-    "upgradeTracker": [
-        {
-            "key": "airAcceleration",
-            "fvalue": 1.0
-        }
-    ],
+    "upgradeTracker": [],
     "playerUpgradeData": {
         "moveSpeed": 0.0,
         "maxHorizontalSpeed": 0.0,
