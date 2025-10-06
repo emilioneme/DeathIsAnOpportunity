@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85a0655c7a6bf6468c282888090ec72, type: 3}
+  m_Name: FirstReturn
+  m_EditorClassIdentifier: 
+  dialogueId: firstReturn
+  isRepeatable: 0
+  lines:
+  - speakerName: Death
+    text: Welcome back my Snoogy Woogy.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: My little snipe gripe.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: My adorable little Killmancer.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: I can keep going you know.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: I can get worse.
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: What the hell even are those things out there?
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Hell, where even is "out there?"
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Well, out there is my garden.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: And as for what those things are...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Hmmm...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Do you really want to know?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Like reeeaaaally really?
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Why, will I go insane trying to comprehend these things?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Huh?
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: I mean maybe.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Frankly the real reason I'm stalling for time is because I can't remember.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Their attacks have been happening for as long as I can remember.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: For some reason, I am really hated.
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: Yeah... for some reason...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Ok smartass, I get that from a human perspective I can seem a little annoying.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: What I really meant is I can't understand why creatures outside of mortality
+      hate me so much.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: I don't really do much of anything in these supramortal realms.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Like my work ties me to your reality. I hardly have time to visit these
+      spaces, let alone piss people off.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: If I could make peace, I really would you know.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: I'm all about everlasting peace.
+    voiceClip: {fileID: 0}
+  - speakerName: Player
+    text: ...
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: For a rotting corpse thing, you sure have a very expressive set of eyes...
+    voiceClip: {fileID: 0}

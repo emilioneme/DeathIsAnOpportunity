@@ -155,7 +155,7 @@ MonoBehaviour:
     text: You're love?
     voiceClip: {fileID: 0}
   - speakerName: Death
-    text: "It\u2019s \u201Cyour\u201D actually, but yes (*\u2267\u03C9\u2266*)"
+    text: "It\u2019s \u201Cyour\u201D actually, but yes (*^ \u03C9 ^*)"
     voiceClip: {fileID: 0}
   - speakerName: Death
     text: I mean, isn't that what you want?
@@ -166,6 +166,18 @@ MonoBehaviour:
   - speakerName: Death
     text: 'And althought I didn''t notice your touching attempts, I managed to finally
       see them after you died. '
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Because I can do that. I can see your whole life after you die.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: It's as invasive as you think it is.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: But that's not the point.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: The point is that I was enamoured by your attempts.
     voiceClip: {fileID: 0}
   - speakerName: Death
     text: 'I couldn''t help but find you sooooo enduring! '
@@ -184,7 +196,7 @@ MonoBehaviour:
       my chest>
     voiceClip: {fileID: 0}
   - speakerName: The Internal Player
-    text: "< It\u2019s not a physical pain, but it\u2019s SOMETHING. A soft rumbling
+    text: "<It\u2019s not a physical pain, but it\u2019s SOMETHING. A soft rumbling
       ache numbs my torso, subsiding the unpleasant feeling.>"
     voiceClip: {fileID: 0}
   - speakerName: Player
@@ -259,11 +271,19 @@ MonoBehaviour:
       subconsciousness. Ancient chants turn my memories to slush>
     voiceClip: {fileID: 0}
   - speakerName: The Internal Player
-    text: <If this was Death's blessing, I'd rather take their wrath>
+    text: <To think a  gift from Death would be worse than their wrath>
     voiceClip: {fileID: 0}
   - speakerName: Death
-    text: There we go! A lovely projectile-based attack spell with which to spam
-      your opponents with.
+    text: There we go! You should be able to use love points now!
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Spend them at the grave stone to YOUR right.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: That's YOUR right. YOURS.
+    voiceClip: {fileID: 0}
+  - speakerName: Death
+    text: Not mine, got it?
     voiceClip: {fileID: 0}
   - speakerName: Punished Player
     text: Can...
@@ -275,5 +295,5 @@ MonoBehaviour:
     text: No.
     voiceClip: {fileID: 0}
   - speakerName: Death
-    text: Now go back out there and get me a couple of those orb like soul things!
+    text: Now go back out there and get yourself some love!
     voiceClip: {fileID: 0}

@@ -80,7 +80,10 @@ public class TimelineTracker : MonoBehaviour
 
 
     // completedEvents checks
-    public bool IsEventCompleted(string eventId) => completedEvents.Contains(eventId);
+    public bool IsEventCompleted(string eventId) 
+    { 
+        return completedEvents.Contains(eventId); 
+    }
     public void MarkEventCompleted(string eventId)
     {
         Debug.Log("the Event is saving");
@@ -222,6 +225,7 @@ public class TimelineTracker : MonoBehaviour
             //    ApplyToUpgradeData(GameManager.Instance.upgradeData, data.playerUpgradeData);
             //}
             //Debug.Log("Timeline progress loaded successfully.");
+            Debug.Log("Load Successful");
         }
         catch (Exception ex)
         {

@@ -16,8 +16,5 @@ MonoBehaviour:
   isRepeatable: 1
   lines:
   - speakerName: Death
-    text: Well? What are you waiting for?
-    voiceClip: {fileID: 0}
-  - speakerName: Death
-    text: Get to it!
+    text: ...
     voiceClip: {fileID: 0}

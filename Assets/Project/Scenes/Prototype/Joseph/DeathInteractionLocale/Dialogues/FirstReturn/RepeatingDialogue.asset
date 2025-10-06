@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85a0655c7a6bf6468c282888090ec72, type: 3}
   m_Name: RepeatingDialogue
   m_EditorClassIdentifier: 
-  dialogueId: repeatFirstScene
+  dialogueId: repeatFirstReturn
   isRepeatable: 1
   lines:
   - speakerName: Death

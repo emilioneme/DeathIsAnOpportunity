@@ -19,8 +19,8 @@ MonoBehaviour:
     text: Welcome back!
     voiceClip: {fileID: 0}
   - speakerName: Death
-    text: You haven't done what I asked of you yet, but it's fine.
+    text: That's all the devs had time for interactions
     voiceClip: {fileID: 0}
   - speakerName: Death
-    text: You have nothing but time in this place.
+    text: Hope you enjoyed them and the game. This is pretty much all there is.
     voiceClip: {fileID: 0}
