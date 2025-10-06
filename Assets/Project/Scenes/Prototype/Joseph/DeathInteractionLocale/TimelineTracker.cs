@@ -60,29 +60,20 @@ public class TimelineTracker : MonoBehaviour
         public List<string> completedEvents;
         public List<SerializableFlag> eventFlags;
         public List<SerializableUpgrade> upgradeTracker;
-        public SerializablePlayerUpgradeData playerUpgradeData;
+        //public SerializablePlayerUpgradeData playerUpgradeData;
     }
 
 
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+        // for testing purposes; otherwise it will got to appdata locallow
+        saveFilePath = Path.Combine(Application.dataPath, "../saveFile.json");
 
-            // for testing purposes; otherwise it will got to appdata locallow
-            saveFilePath = Path.Combine(Application.dataPath, "../saveFile.json");
+        // saveFilePath = Path.Combine(Application.persistentDataPath, "timeline_progress.json");
 
-            // saveFilePath = Path.Combine(Application.persistentDataPath, "timeline_progress.json");
+        LoadProgress();
 
-            LoadProgress();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
 

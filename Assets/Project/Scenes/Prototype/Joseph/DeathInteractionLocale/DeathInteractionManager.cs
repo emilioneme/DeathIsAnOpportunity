@@ -7,13 +7,11 @@ public class DeathInteractionManager : MonoBehaviour, IInteractable
     [SerializeField] private DialogueBatch[] dialogues;
     private int batchCurrent = 0;
     private int indexCurrent = 0;
-    private TimelineTracker tracker;
-    private DialogueManager manager;
+    [SerializeField] private TimelineTracker tracker;
+    [SerializeField] private DialogueManager manager;
 
     private void Awake()
     {
-        tracker = TimelineTracker.Instance;
-        manager = DialogueManager.Instance;
 
         foreach (DialogueBatch batch in dialogues)
         {
