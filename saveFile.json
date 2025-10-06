@@ -1,27 +1,34 @@
 {
-    "completedEvents": [],
+    "completedEvents": [
+        "Upgrade_moveSpeed_Level1",
+        "Upgrade_moveSpeed_Level2",
+        "Upgrade_moveSpeed_Level3",
+        "Upgrade_moveSpeed_Level4",
+        "Upgrade_moveSpeed_Level5",
+        "Upgrade_GroundAcceleration_Level1",
+        "Upgrade_GroundAcceleration_Level2",
+        "Upgrade_GroundAcceleration_Level3",
+        "Upgrade_GroundAcceleration_Level4",
+        "Upgrade_GroundAcceleration_Level5",
+        "Upgrade_MaxJumpHeight_Level1",
+        "Upgrade_MaxJumpHeight_Level2",
+        "Upgrade_MaxJumpHeight_Level3",
+        "Upgrade_MaxJumpHeight_Level4",
+        "Upgrade_MaxJumpHeight_Level5"
+    ],
     "eventFlags": [],
-    "upgradeTracker": [],
-    "playerUpgradeData": {
-        "moveSpeed": 0.0,
-        "maxHorizontalSpeed": 0.0,
-        "groundAcceleration": 0.0,
-        "airAcceleration": 0.0,
-        "groundLinearDrag": 0.0,
-        "airLinearDrag": 0.0,
-        "jumpImpulse": 0.0,
-        "maxAirJumps": 0,
-        "coyoteTime": 0.0,
-        "jumpBuffer": 0.0,
-        "fallGravityMultiplier": 0.0,
-        "lowJumpGravityMultiplier": 0.0,
-        "fireRate": 0.0,
-        "projectileSize": 0.0,
-        "projectileDamage": 0.0,
-        "projectileSpeed": 0.0,
-        "projectileLife": 0.0,
-        "projectilesPerShot": 0,
-        "projectileSpreadRadius": 0.0,
-        "projectileAngleVariance": 0.0
-    }
+    "upgradeTracker": [
+        {
+            "key": "moveSpeed",
+            "fvalue": 5.0
+        },
+        {
+            "key": "GroundAcceleration",
+            "fvalue": 5.0
+        },
+        {
+            "key": "MaxJumpHeight",
+            "fvalue": 5.0
+        }
+    ]
 }

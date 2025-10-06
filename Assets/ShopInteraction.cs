@@ -63,9 +63,12 @@ public class ShopInteraction : MonoBehaviour, IInteractable
 
     public void SelectUpgrade(string upgrade)
     {
+        Debug.Log(upgrade);
+        Debug.Log(upgradeData.moveSpeed);
         switch (upgrade)
         {
             case "moveSpeed":
+                Debug.Log("It's Happening!!!");
                 if (upgradeData.moveSpeed < 100) 
                     upgradeData.moveSpeed += 18.6f;
                 break;
@@ -113,9 +116,11 @@ public class ShopInteraction : MonoBehaviour, IInteractable
                 if (upgradeData.projectileAngleVariance < 10f)
                     upgradeData.projectileAngleVariance += 1f;
                 break;
+            default:
+                Debug.Log("FUBAR");
+                break;
         }
 
-        Debug.Log(upgrade);
         upgradeData.NotifyChanged();
     }
 }

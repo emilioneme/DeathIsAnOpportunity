@@ -4,6 +4,8 @@ using TMPro;
 
 public class Inflationomics : MonoBehaviour
 {
+    [SerializeField] TimelineTracker tracker;
+
     [Header("UI References")]
     [SerializeField] private Button upgradeButton;
     [SerializeField] private TMP_Text priceText;
@@ -21,13 +23,14 @@ public class Inflationomics : MonoBehaviour
         if (!upgradeButton) upgradeButton = GetComponent<Button>();
 
         // Load current level from TimelineTracker
-        currentLevel = Mathf.RoundToInt(TimelineTracker.Instance.GetUpgrade(upgradeId));
+        //currentLevel = Mathf.RoundToInt(tracker.GetUpgrade(upgradeId));
         UpdatePriceText();
 
     }
 
     public void OnUpgradeClicked()
     {
+        Debug.Log("Clicked");
         if (currentLevel >= maxLevel)
             return; // Maxed out
 
@@ -35,8 +38,8 @@ public class Inflationomics : MonoBehaviour
         currentLevel++;
 
         // Update upgradeTracker
-        TimelineTracker.Instance.SetUpgrade(upgradeId, currentLevel);
-        TimelineTracker.Instance.MarkEventCompleted($"Upgrade_{upgradeId}_Level{currentLevel}");
+        tracker.SetUpgrade(upgradeId, currentLevel);
+        tracker.MarkEventCompleted($"Upgrade_{upgradeId}_Level{currentLevel}");
 
         UpdatePriceText();
     }

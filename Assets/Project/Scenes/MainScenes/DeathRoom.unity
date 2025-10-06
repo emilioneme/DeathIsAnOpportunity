@@ -954,6 +954,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 388239807}
     - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1984,6 +1988,10 @@ PrefabInstance:
       value: More Air Jumps
       objectReference: {fileID: 0}
     - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 388239807}
+    - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: upgradeId
       value: MaxJumpHeight
       objectReference: {fileID: 0}
@@ -2412,6 +2420,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Projectile Speed
       objectReference: {fileID: 0}
+    - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 388239807}
     - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: upgradeId
       value: projectileSpeed
@@ -3102,6 +3114,10 @@ PrefabInstance:
       value: Jump Height
       objectReference: {fileID: 0}
     - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 388239807}
+    - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: upgradeId
       value: jumpImpulse
       objectReference: {fileID: 0}
@@ -3229,19 +3245,51 @@ PrefabInstance:
       value: Ground Acceleration
       objectReference: {fileID: 0}
     - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 388239807}
+    - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: upgradeId
       value: GroundAcceleration
       objectReference: {fileID: 0}
     - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2108129257}
+    - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 553170646}
     - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnUpgradeClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SelectUpgrade
       objectReference: {fileID: 0}
     - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Inflationomics, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ShopInteraction, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704886775381095309, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: groundAccel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3491,6 +3539,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Projectile Damage
       objectReference: {fileID: 0}
+    - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 388239807}
     - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: upgradeId
       value: projectileDamage
@@ -4450,6 +4502,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Accuracy
       objectReference: {fileID: 0}
+    - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 388239807}
     - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: upgradeId
       value: projectileAngleVariance
@@ -73211,6 +73267,10 @@ PrefabInstance:
       value: Fire Rate++
       objectReference: {fileID: 0}
     - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 388239807}
+    - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: upgradeId
       value: fireRate
       objectReference: {fileID: 0}
@@ -73236,6 +73296,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2532660440514304783, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
   m_PrefabInstance: {fileID: 2075017380}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2108129257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+  m_PrefabInstance: {fileID: 1193047022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351e7e78a15c7954c88fe7eb2d20b55f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2116377882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73336,6 +73407,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Projectile++
       objectReference: {fileID: 0}
+    - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
+      propertyPath: tracker
+      value: 
+      objectReference: {fileID: 388239807}
     - target: {fileID: 6991673628125166409, guid: b927814d1d1b455498a58ca5a1f9146f, type: 3}
       propertyPath: upgradeId
       value: projectilesPerShot
@@ -74889,14 +74964,14 @@ MonoBehaviour:
   inputHub: {fileID: 314169862707007880}
   orientation: {fileID: 4187071046311480392}
   rb: {fileID: 8446183748713668069}
-  moveSpeed: 7.5
-  maxHorizontalSpeed: 11.25
-  groundAcceleration: 40
+  moveSpeed: 100.5
+  maxHorizontalSpeed: 150.75
+  groundAcceleration: 200
   airAcceleration: 10
   groundLinearDrag: 1
   airLinearDrag: 0.5
   jumpImpulse: 5
-  maxAirJumps: 0
+  maxAirJumps: 5
   coyoteTime: 0.1
   jumpBuffer: 0.1
   fallGravityMultiplier: 2
@@ -75000,6 +75075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351e7e78a15c7954c88fe7eb2d20b55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tracker: {fileID: 388239807}
   upgradeButton: {fileID: 5014397404422024036}
   priceText: {fileID: 5741884489877204382}
   upgradeId: moveSpeed

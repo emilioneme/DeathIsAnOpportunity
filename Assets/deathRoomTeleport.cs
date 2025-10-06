@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 public class deathRoomTeleport : MonoBehaviour
 {
     [SerializeField] private Health health;
-    [SerializeField] private SceneManagerFade sceneManager;
     private void Start()
     {
-        health.OnDeath.AddListener(()=>sceneManager.LoadScene("DeathRoom"));
+        health.OnDeath.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene("DeathRoom"));
     }
 }
