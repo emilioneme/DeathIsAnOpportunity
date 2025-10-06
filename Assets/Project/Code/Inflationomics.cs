@@ -28,7 +28,6 @@ public class Inflationomics : MonoBehaviour
         // Load current level from TimelineTracker
         if (tracker.HasUpgrade(upgradeId)) currentLevel = Mathf.RoundToInt(tracker.GetUpgrade(upgradeId));
         UpdatePriceText();
-        CheckPrice(currentPrice);
     }
 
     void CheckPrice(int price)
@@ -72,6 +71,7 @@ public class Inflationomics : MonoBehaviour
             priceText.text = $"{nextPrice}";
             currentPrice = (int)nextPrice;
             upgradeButton.interactable = true;
+            CheckPrice(currentPrice);
         }
     }
 }
