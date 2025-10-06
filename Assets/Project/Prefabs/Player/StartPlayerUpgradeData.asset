@@ -26,7 +26,7 @@ MonoBehaviour:
   lowJumpGravityMultiplier: 2.5
   fireRate: 0.5
   projectileSize: 1
-  projectileDamage: 1
+  projectileDamage: 10
   projectileSpeed: 10
   projectileLife: 2
   projectilesPerShot: 1
