@@ -1,34 +1,5 @@
 {
-    "completedEvents": [
-        "Upgrade_moveSpeed_Level1",
-        "Upgrade_moveSpeed_Level2",
-        "Upgrade_moveSpeed_Level3",
-        "Upgrade_moveSpeed_Level4",
-        "Upgrade_moveSpeed_Level5",
-        "Upgrade_GroundAcceleration_Level1",
-        "Upgrade_GroundAcceleration_Level2",
-        "Upgrade_GroundAcceleration_Level3",
-        "Upgrade_GroundAcceleration_Level4",
-        "Upgrade_GroundAcceleration_Level5",
-        "Upgrade_MaxJumpHeight_Level1",
-        "Upgrade_MaxJumpHeight_Level2",
-        "Upgrade_MaxJumpHeight_Level3",
-        "Upgrade_MaxJumpHeight_Level4",
-        "Upgrade_MaxJumpHeight_Level5"
-    ],
+    "completedEvents": [],
     "eventFlags": [],
-    "upgradeTracker": [
-        {
-            "key": "moveSpeed",
-            "fvalue": 5.0
-        },
-        {
-            "key": "GroundAcceleration",
-            "fvalue": 5.0
-        },
-        {
-            "key": "MaxJumpHeight",
-            "fvalue": 5.0
-        }
-    ]
+    "upgradeTracker": []
 }

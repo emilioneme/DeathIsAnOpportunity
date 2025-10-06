@@ -133,7 +133,7 @@ public class TimelineTracker : MonoBehaviour
             return value;
         }
 
-        Debug.LogWarning($"Event '{upgradeTracker}' does not exist!");
+        Debug.Log($"Event '{upgradeTracker}' does not exist!");
         return 0f; // default
     }
     public void SetUpgrade(string upgradeId, float value)

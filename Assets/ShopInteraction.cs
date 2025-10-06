@@ -63,8 +63,7 @@ public class ShopInteraction : MonoBehaviour, IInteractable
 
     public void SelectUpgrade(string upgrade)
     {
-        Debug.Log(upgrade);
-        Debug.Log(upgradeData.moveSpeed);
+        
         switch (upgrade)
         {
             case "moveSpeed":
