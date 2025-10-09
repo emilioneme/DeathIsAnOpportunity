@@ -6,17 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project 2.0/Scenes/Prototype/Main Menu.unity
-    guid: 8eeced390c63dc3489aae99d593bed9c
+    path: Assets/Project 2.0/Scenes/MainScenes/Menu.unity
+    guid: 8ff69fa7ddad5fc4daa393672deeb09e
   - enabled: 1
-    path: Assets/Project 2.0/Scenes/Prototype/Intro.unity
-    guid: 15c816e3c535e6c49a3bd491c1e38fca
+    path: Assets/Project 2.0/Scenes/MainScenes/Arena.unity
+    guid: afb03983f33756c45b1306875c857d44
   - enabled: 1
-    path: Assets/Project 2.0/Scenes/Prototype/Matvey/LevelChanged.unity
-    guid: 8002c4d0c4fc1ad4c94321e85facb298
-  - enabled: 1
-    path: Assets/Project 2.0/Scenes/Prototype/DeathRoom.unity
-    guid: cc357168b8d3c6243a7f4dd358bb19a1
+    path: Assets/Project 2.0/Scenes/MainScenes/DeathRoom.unity
+    guid: 28288c6c55cc5f44da267eb07518bcc6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

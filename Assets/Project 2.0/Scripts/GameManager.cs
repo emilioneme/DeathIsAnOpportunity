@@ -4,6 +4,8 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager gameManager;
 
+    //[SerializeField] DataScirptableObject gameData;
+
     [Header("Settings")]
     public float masterVolume = 0.5f;
     public float musicVolume = 0.5f;
