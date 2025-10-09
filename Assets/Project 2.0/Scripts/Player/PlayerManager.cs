@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     void Awake()
     {
         GameManager = FindFirstObjectByType<GameManager>();
-        upgradeData = GameManager.upgradeData;
+        //upgradeData = GameManager.upgradeData;
         ApplyUpgradeData(upgradeData);
         CacheComponents();
         RefreshUpgradeData();

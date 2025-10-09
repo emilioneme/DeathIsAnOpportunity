@@ -2,40 +2,76 @@
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager _instance;
-    public PlayerUpgradeData upgradeData;
-    public TimelineTracker tracker;
-    public int soulCount;
+    private static GameManager gameManager;
+
+    [Header("Settings")]
+    public float masterVolume = 0.5f;
+    public float musicVolume = 0.5f;
+    public float sensitivity = .5f;
+
+    [Space]
+    [Header("Currency")]
+    [SerializeField]
+    public int soulCount = 0;
+
+    [Space]
+    [Header("Health")]
+    public int maxHealth = 100;
+    public int startHealth = 100;
+
+    [Space]
+    [Header("Movement")]
+    [SerializeField]
+    public int walkSpeed = 1;
+
+    [SerializeField]
+    public int jumpForce = 0;
+
+    [SerializeField]
+    public int airJumps = 0;
+
+    [SerializeField]
+    public int dashCount = 0;
+
+    [Space]
+    [Header("Combat")]
+
+    [SerializeField]
+    public float fireRate = 1;
+
+    [SerializeField]
+    public int damage = 50;
+
 
     public static GameManager Instance
     {
         get
         {
-            if (_instance == null)
+            if (gameManager == null)
             {
                 // Try to find an existing instance in the scene
-                _instance = FindFirstObjectByType<GameManager>();
+                gameManager = FindFirstObjectByType<GameManager>();
 
-                if (_instance == null)
+                if (gameManager == null)
                 {
                     // Create a new GameObject if none exists
                     GameObject singletonObject = new GameObject(typeof(GameManager).Name);
-                    _instance = singletonObject.AddComponent<GameManager>();
+                    gameManager = singletonObject.AddComponent<GameManager>();
                 }
             }
-            return _instance;
+            return gameManager;
         }
     }
 
     private void Awake()
     {
         // Ensure only one instance exists
-        if (_instance == null)
+        if (gameManager == null)
         {
-            _instance = this;
+            gameManager = this;
             DontDestroyOnLoad(gameObject);
         }
-        else if (_instance != this)
+        else if (gameManager != this)
         {
             Destroy(gameObject);
         }

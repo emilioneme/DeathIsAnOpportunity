@@ -23,7 +23,6 @@ public class PlayerInputHub : MonoBehaviour
     public event System.Action OnJumpPressed;
     public event System.Action OnAttackPressed;
     public event System.Action OnInteractPressed;
-
     public event System.Action OnFingerPressed;
 
     // --- Input System callbacks ---

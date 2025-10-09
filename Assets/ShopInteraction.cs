@@ -18,7 +18,7 @@ public class ShopInteraction : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        upgradeData = GameManager.upgradeData;
+        //upgradeData = GameManager.upgradeData;
     }
     public void Interact()
     {
